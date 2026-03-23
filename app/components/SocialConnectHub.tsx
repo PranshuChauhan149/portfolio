@@ -207,8 +207,8 @@ function FloatingSocialTile({ social, index, mobile = false }: { social: SocialI
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ delay: index * 0.08, duration: 0.42 }}
       animate={{ y: [0, -7, 0] }}
+      transition={{ delay: index * 0.08, duration: 0.42, y: { duration: 5 + index * 0.35, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" } }}
       style={!mobile ? { left: `${social.pos.x}%`, top: `${social.pos.y}%`, transform: `translate(-50%, -50%) translate(${offset.x}px, ${offset.y}px)` } : undefined}
       className={`${!mobile ? "absolute w-42.5" : ""}`}
       onMouseMove={(e) => {
@@ -229,7 +229,6 @@ function FloatingSocialTile({ social, index, mobile = false }: { social: SocialI
         setRipples((prev) => [...prev, r]);
         setTimeout(() => setRipples((prev) => prev.filter((item) => item.id !== r.id)), 600);
       }}
-      transition={{ duration: 5 + index * 0.35, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
     >
       <div className={`${className} ${social.glow}`}>
         <span className="absolute inset-0 rounded-3xl bg-linear-to-br from-blue-400/0 via-violet-400/0 to-pink-400/0 opacity-0 transition group-hover:from-blue-400/18 group-hover:via-violet-400/16 group-hover:to-pink-400/22 group-hover:opacity-100" />
