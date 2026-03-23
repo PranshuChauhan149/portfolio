@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Full Stack Engineer Portfolio
 
-## Getting Started
+A premium dark-themed portfolio built with Next.js App Router, TypeScript, Tailwind CSS, and Framer Motion.
 
-First, run the development server:
+## Features
+
+- Multi-page routing with route-level SEO metadata
+- Responsive hero, about, skills, projects, experience, stats, and contact pages
+- Smooth animations and micro-interactions powered by Framer Motion
+- Project filter tabs (Web, Mobile, AI/ML)
+- Dynamic project detail routes with breadcrumbs (`/projects/[slug]`)
+- API route for contact form validation and submission
+- Modern glassmorphism UI with strong accessibility and performance defaults
+
+## Route Map
+
+- `/` Home (hero + highlights + featured projects)
+- `/about` About page
+- `/projects` Project listing with filters
+- `/projects/[slug]` Dynamic project details
+- `/skills` Skills page
+- `/experience` Experience timeline
+- `/contact` Contact page
+
+## Tech Stack
+
+- Next.js 16 (App Router)
+- TypeScript
+- Tailwind CSS v4
+- Framer Motion
+- Lucide React Icons
+
+## Run Locally
+
+1. Install dependencies
+
+```bash
+npm install
+```
+
+2. Start dev server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment (Vercel)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Push this repository to GitHub.
+2. Import the repository into Vercel.
+3. Use default Next.js build settings:
+	- Build command: `npm run build`
+	- Output directory: `.next`
+4. Deploy.
 
-## Learn More
+## Customization Checklist
 
-To learn more about Next.js, take a look at the following resources:
+- Replace placeholder profile/project SVG assets in [public/projects](public/projects)
+- Replace social links and personal details in [app/data/portfolio.ts](app/data/portfolio.ts)
+- Replace resume file [public/resume.txt](public/resume.txt) with your real PDF
+- Update site metadata in [app/layout.tsx](app/layout.tsx)
+- Add/edit page-level metadata in each route file under [app](app)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contact Form Backend Extension
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The API endpoint is available at [app/api/contact/route.ts](app/api/contact/route.ts). You can extend it with MongoDB, Nodemailer, or Resend for production message delivery.

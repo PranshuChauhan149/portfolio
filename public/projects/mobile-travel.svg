@@ -1,0 +1,7 @@
+<svg width="960" height="540" viewBox="0 0 960 540" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="540" rx="28" fill="#07111F"/>
+  <path d="M130 360C250 260 360 255 480 330C620 420 710 300 840 230" stroke="#22C55E" stroke-opacity="0.9" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="840" cy="230" r="14" fill="#6366F1"/>
+  <rect x="100" y="100" width="420" height="70" rx="14" fill="#111827"/>
+  <text x="125" y="145" fill="#E5E7EB" font-size="40" font-family="Arial">TravelMate</text>
+</svg>
