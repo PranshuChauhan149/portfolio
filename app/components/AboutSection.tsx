@@ -46,13 +46,13 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <AnimatedSection id="about-page" className="section mt-24">
+    <AnimatedSection id="about-page" className="section mt-16 sm:mt-20 lg:mt-24">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
         transition={{ duration: 0.55, ease: "easeOut" }}
-        className="grid items-center gap-8 rounded-3xl p-7 sm:p-10 lg:grid-cols-[1.2fr_0.8fr]"
+        className="grid items-center gap-7 rounded-3xl p-5 sm:gap-8 sm:p-8 lg:grid-cols-[1.2fr_0.8fr] lg:p-10"
       >
         <motion.div
           initial={{ opacity: 0, y: 14 }}
@@ -64,7 +64,7 @@ export default function AboutSection() {
             <BookOpen className="h-3.5 w-3.5" /> ABOUT ME
           </p>
 
-          <h1 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-5xl">
+          <h1 className="mt-4 text-2xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
             I&apos;m <span className="gradient-text">Pranshu</span>, a creative engineer
           </h1>
 
@@ -108,7 +108,7 @@ export default function AboutSection() {
         >
           <div className="relative h-80 overflow-hidden rounded-xl bg-linear-to-br from-indigo-500/20 via-slate-900 to-emerald-500/20">
             <Image
-              src="/projects/profile-avatar.svg"
+              src="/profile-photo.jpeg"
               alt="Pranshu profile illustration"
               fill
               className="object-cover"
@@ -133,7 +133,7 @@ export default function AboutSection() {
         </h2>
         <p className="mt-2 text-sm text-slate-200">Live snapshot from my GitHub profile.</p>
 
-        <div className="relative z-10 mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="relative z-10 mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}

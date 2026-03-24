@@ -30,7 +30,7 @@ export default function ProjectsSection({
 
   return (
     <>
-      <AnimatedSection id="projects-section" className="section mt-12 pt-8 overflow-visible">
+      <AnimatedSection id="projects-section" className="section mt-10 overflow-visible pt-6 sm:mt-12 sm:pt-8">
 
       <div
         className={`flex flex-wrap items-end gap-3 ${
@@ -38,7 +38,7 @@ export default function ProjectsSection({
         }`}
       >
         <div className={introCentered ? "max-w-4xl" : ""}>
-          <h2 className={`${introCentered ? "text-4xl sm:text-6xl" : "section-heading"} font-semibold tracking-tight`}>
+          <h2 className={`${introCentered ? "text-3xl sm:text-5xl lg:text-6xl" : "section-heading"} font-semibold tracking-tight`}>
             {introCentered ? (
               <>
                 Featured <span className="gradient-text">Projects</span>
@@ -50,7 +50,7 @@ export default function ProjectsSection({
           <p
             className={`${
               introCentered
-                ? "mx-auto mt-5 max-w-2xl text-base text-slate-300 sm:text-xl"
+                ? "mx-auto mt-4 max-w-2xl text-sm text-slate-300 sm:mt-5 sm:text-lg lg:text-xl"
                 : "section-subheading"
             }`}
           >
@@ -64,7 +64,7 @@ export default function ProjectsSection({
       </div>
 
       {variant === "showcase" ? (
-        <div className="mx-auto mt-14 max-w-7xl space-y-28 px-4 sm:px-8 overflow-visible">
+        <div className="mx-auto mt-10 max-w-7xl space-y-16 overflow-visible px-0 sm:mt-14 sm:space-y-24 sm:px-2 lg:space-y-28">
           {renderedProjects.map((project, index) => (
             <motion.article
               key={project.slug}
@@ -94,7 +94,7 @@ export default function ProjectsSection({
               />
 
               <div
-                className={`relative grid items-center gap-12 pb-2 lg:gap-20 ${
+                className={`relative grid items-center gap-7 pb-2 sm:gap-10 lg:gap-20 ${
                   index % 2 === 0 ? "lg:grid-cols-[1fr_1.08fr]" : "lg:grid-cols-[1.08fr_1fr]"
                 }`}
               >
@@ -121,13 +121,13 @@ export default function ProjectsSection({
                     className="absolute inset-0 z-20"
                     aria-label={`Open ${project.title} details`}
                   />
-                  <div className="relative h-64 overflow-hidden rounded-2xl sm:h-72 lg:h-80">
+                  <div className="relative h-52 overflow-hidden rounded-2xl sm:h-64 lg:h-80">
                     <Image
                       src={project.image}
                       alt={`${project.title} preview`}
                       fill
                       sizes="(max-width: 1024px) 100vw, 58vw"
-                      className="object-cover transition duration-700 ease-out group-hover:scale-[1.11]"
+                      className="object-cover transition duration-700 ease-out group-hover:scale-[1.06]"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-black/58 via-black/18 to-transparent transition duration-300 group-hover:from-black/78 group-hover:via-black/34" />
                     <div
@@ -155,10 +155,10 @@ export default function ProjectsSection({
                     <span className="h-px w-14 bg-white/20" />
                   </div>
 
-                <h3 className="text-3xl font-semibold leading-tight tracking-tight bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent sm:text-4xl">
+                <h3 className="bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-2xl font-semibold leading-tight tracking-tight text-transparent sm:text-3xl lg:text-4xl">
   {project.title}
 </h3>
-                  <p className="mt-4 max-w-[38ch] text-base leading-relaxed text-slate-300 sm:text-lg">
+                  <p className="mt-3 max-w-[44ch] text-sm leading-relaxed text-slate-300 sm:mt-4 sm:text-base lg:text-lg">
                     {project.description}
                   </p>
 
@@ -193,13 +193,13 @@ export default function ProjectsSection({
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false, amount: 0.25 }}
                     transition={{ duration: 0.36, delay: 0.26 + index * 0.05 }}
-                    className="mt-8 flex flex-wrap items-center gap-3"
+                    className="mt-6 flex flex-wrap items-center gap-3 sm:mt-8"
                   >
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-medium text-slate-300 transition hover:text-white"
+                      className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-slate-300 transition hover:text-white"
                     >
                       <Github className="h-4 w-4" /> Source Code
                     </a>
@@ -207,13 +207,13 @@ export default function ProjectsSection({
                       href={project.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/7 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/12"
+                      className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-white/7 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/12"
                     >
                       Live Demo <ExternalLink className="h-4 w-4" />
                     </a>
                     <Link
                       href={`/projects/${project.slug}`}
-                      className="rounded-full border border-indigo-300/30 bg-indigo-500/10 px-4 py-2 text-sm font-medium text-indigo-200 transition hover:bg-indigo-500/20"
+                      className="inline-flex min-h-11 items-center rounded-full border border-indigo-300/30 bg-indigo-500/10 px-4 py-2 text-sm font-medium text-indigo-200 transition hover:bg-indigo-500/20"
                     >
                       Case Study
                     </Link>
@@ -224,7 +224,7 @@ export default function ProjectsSection({
           ))}
         </div>
       ) : (
-        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 xl:grid-cols-3">
           {renderedProjects.map((project, index) => (
             <motion.article
               key={project.slug}

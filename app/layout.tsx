@@ -40,7 +40,7 @@ export default function RootLayout({
         <BackgroundGrid />
         <RouteEffects />
         <Navbar />
-        <main className="relative z-10 pb-10 pt-26 sm:pt-28">{children}</main>
+        <main className="relative z-10 overflow-x-clip pb-10 pt-24 sm:pt-26 lg:pt-28">{children}</main>
         <Footer />
       </body>
     </html>

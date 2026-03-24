@@ -258,7 +258,7 @@ export default function TechStackShowcase() {
   const p = circlePath(active?.level ?? 0);
 
   return (
-    <section className="section mt-16">
+    <section className="section mt-14 sm:mt-16">
       <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-[#0b1022]/88 via-[#0f172d]/84 to-[#101b34]/88 p-6 shadow-[0_25px_90px_rgba(0,0,0,0.45)] sm:p-8">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(99,102,241,0.18),transparent_45%),radial-gradient(circle_at_80%_80%,rgba(56,189,248,0.15),transparent_45%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size-[38px_38px]" />
@@ -276,7 +276,7 @@ export default function TechStackShowcase() {
                 key={tab}
                 type="button"
                 onClick={() => setFilter(tab)}
-                className={`rounded-full px-4 py-1.5 text-sm font-medium transition ${
+                className={`min-h-11 rounded-full px-4 py-1.5 text-sm font-medium transition ${
                   filter === tab
                     ? "bg-indigo-500/25 text-indigo-100 shadow-[0_0_18px_rgba(99,102,241,0.35)]"
                     : "bg-white/8 text-slate-200 hover:bg-white/12"
@@ -288,9 +288,9 @@ export default function TechStackShowcase() {
           </div>
         </div>
 
-        <div className="relative z-10 mt-7 grid gap-6 lg:grid-cols-[1.3fr_0.7fr]">
+        <div className="relative z-10 mt-7 grid gap-6 xl:grid-cols-[1.3fr_0.7fr]">
           <div
-            className="relative hidden h-170 overflow-hidden rounded-2xl bg-white/4 lg:block"
+            className="relative hidden h-170 overflow-hidden rounded-2xl bg-white/4 xl:block"
             onMouseMove={(e) => {
               const b = e.currentTarget.getBoundingClientRect();
               setSpot({ x: ((e.clientX - b.left) / b.width) * 100, y: ((e.clientY - b.top) / b.height) * 100 });
@@ -398,14 +398,14 @@ export default function TechStackShowcase() {
               </div>
             </div>
 
-            <div className="mt-4 lg:hidden">
+            <div className="mt-4 xl:hidden">
               <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                 {filtered.map((s) => (
                   <button
                     type="button"
                     key={s.name}
                     onClick={() => setActive(s)}
-                    className="rounded-lg bg-white/10 px-3 py-2 text-xs font-medium text-slate-100"
+                    className="min-h-11 rounded-lg bg-white/10 px-3 py-2 text-xs font-medium text-slate-100"
                   >
                     <s.icon className={`mr-1 inline h-3.5 w-3.5 ${s.iconColor}`} />
                     {s.name}

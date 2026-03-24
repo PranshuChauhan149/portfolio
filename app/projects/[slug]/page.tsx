@@ -67,7 +67,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
         {/* Hero Image */}
         <div className="relative mb-10 overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur">
-          <div className="relative h-72 w-full sm:h-96 lg:h-[500px]">
+          <div className="relative h-72 w-full sm:h-96 lg:h-125">
             <Image
               src={project.image}
               alt={`${project.title} hero preview`}
@@ -82,7 +82,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         </div>
 
         {/* Main Content */}
-        <article className="grid gap-10 lg:grid-cols-[1fr_350px]">
+        <article className="grid gap-8 lg:grid-cols-[1fr_minmax(280px,340px)] lg:gap-10">
           <div>
             {/* Header Section */}
             <div className="mb-8">
@@ -92,10 +92,10 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                   {project.category}
                 </span>
               </div>
-              <h1 className="mt-5 text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
+              <h1 className="mt-5 text-3xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
                 {project.title}
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:mt-6 sm:text-lg">
                 {project.longDescription}
               </p>
             </div>
@@ -116,7 +116,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
             </div>
 
             {/* Highlights */}
-            <div className="mb-10 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+            <div className="mb-10 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur sm:p-8">
               <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
                 <span className="h-1 w-1 rounded-full bg-indigo-400" />
                 Project Highlights
@@ -164,14 +164,14 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
           {/* Sidebar */}
           <aside className="h-fit">
             {/* Quick Links Card */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur sticky top-32 p-6">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur sm:p-6 lg:sticky lg:top-32">
               <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-6">Quick Links</h3>
               <div className="space-y-3">
                 <a
                   href={project.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex w-full items-center justify-between rounded-xl border border-indigo-400/30 bg-indigo-500/15 px-4 py-3 text-sm font-semibold text-indigo-200 transition hover:bg-indigo-500/25 hover:border-indigo-400/50"
+                  className="group flex min-h-11 w-full items-center justify-between rounded-xl border border-indigo-400/30 bg-indigo-500/15 px-4 py-3 text-sm font-semibold text-indigo-200 transition hover:border-indigo-400/50 hover:bg-indigo-500/25"
                 >
                   <span>Live Demo</span>
                   <ExternalLink className="h-4 w-4 transition group-hover:translate-x-0.5" />
@@ -180,14 +180,14 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex w-full items-center justify-between rounded-xl border border-white/15 bg-white/7 px-4 py-3 text-sm font-semibold text-slate-200 transition hover:bg-white/12 hover:border-white/25"
+                  className="group flex min-h-11 w-full items-center justify-between rounded-xl border border-white/15 bg-white/7 px-4 py-3 text-sm font-semibold text-slate-200 transition hover:border-white/25 hover:bg-white/12"
                 >
                   <span>Source Code</span>
                   <Github className="h-4 w-4 transition group-hover:translate-x-0.5" />
                 </a>
                 <Link
                   href="/projects"
-                  className="group flex w-full items-center justify-between rounded-xl border border-white/15 bg-white/7 px-4 py-3 text-sm font-semibold text-slate-200 transition hover:bg-white/12"
+                  className="group flex min-h-11 w-full items-center justify-between rounded-xl border border-white/15 bg-white/7 px-4 py-3 text-sm font-semibold text-slate-200 transition hover:bg-white/12"
                 >
                   <span>All Projects</span>
                   <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
@@ -201,7 +201,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         {relatedProjects.length > 0 && (
           <section className="mt-20">
             <h2 className="mb-10 text-3xl font-bold text-foreground flex items-center gap-3">
-              <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-indigo-400 to-cyan-400" />
+              <span className="h-1.5 w-1.5 rounded-full bg-linear-to-r from-indigo-400 to-cyan-400" />
               Related Projects
             </h2>
             <div className="grid gap-6 sm:grid-cols-2">

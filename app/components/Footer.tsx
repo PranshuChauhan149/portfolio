@@ -17,11 +17,11 @@ const codingLinks = [
 
 export default function Footer() {
   return (
-    <footer className="section pb-10 pt-8">
-      <div className="relative overflow-hidden   p-6  sm:p-8">
+    <footer className="section pb-10 pt-6 sm:pt-8">
+      <div className="relative overflow-hidden p-5 sm:p-8">
         <div className="pointer-events-none absolute inset-0" />
 
-        <div className="relative z-10 grid gap-7 md:grid-cols-[1.2fr_0.8fr_1fr]">
+        <div className="relative z-10 grid gap-7 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr]">
           <div>
             <p className="text-xl font-semibold text-white">Pranshu Chauhan</p>
             <p className="mt-2 max-w-sm text-sm text-slate-300">
@@ -48,16 +48,16 @@ export default function Footer() {
           <div>
             <p className="text-sm font-semibold text-white">Connect</p>
             <div className="mt-3 flex flex-wrap gap-2">
-              <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-white/12 bg-white/6 p-2 text-slate-200 transition hover:bg-white/12 hover:text-white" aria-label="GitHub">
+              <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg border border-white/12 bg-white/6 p-2 text-slate-200 transition hover:bg-white/12 hover:text-white" aria-label="GitHub">
                 <Github className="h-4 w-4" />
               </a>
-              <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-white/12 bg-white/6 p-2 text-slate-200 transition hover:bg-white/12 hover:text-white" aria-label="LinkedIn">
+              <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg border border-white/12 bg-white/6 p-2 text-slate-200 transition hover:bg-white/12 hover:text-white" aria-label="LinkedIn">
                 <Linkedin className="h-4 w-4" />
               </a>
-              <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-white/12 bg-white/6 p-2 text-slate-200 transition hover:bg-white/12 hover:text-white" aria-label="Twitter">
+              <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg border border-white/12 bg-white/6 p-2 text-slate-200 transition hover:bg-white/12 hover:text-white" aria-label="Twitter">
                 <Twitter className="h-4 w-4" />
               </a>
-              <a href={socialLinks.email} className="rounded-lg border border-white/12 bg-white/6 p-2 text-slate-200 transition hover:bg-white/12 hover:text-white" aria-label="Email">
+              <a href={socialLinks.email} className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg border border-white/12 bg-white/6 p-2 text-slate-200 transition hover:bg-white/12 hover:text-white" aria-label="Email">
                 <Mail className="h-4 w-4" />
               </a>
             </div>

@@ -76,20 +76,20 @@ export default function HeroSection() {
           {/* TOP */}
           <div className="flex items-center justify-between gap-4">
             <motion.div variants={item} className="flex items-center gap-3">
-              <Image
-                src="/profile-avatar.svg"
-                alt="Pranshu"
-                width={58}
-                height={58}
-                className="rounded-xl border border-white/10"
-                priority
-              />
+             <Image
+  src="/profile-photo.jpeg"
+  alt="Pranshu"
+  width={50}
+  height={50}
+  className="w-[60px] h-[60px] rounded-full object-cover border border-white/10"
+  priority
+/>
               <div>
                 <p className="text-base sm:text-xl font-semibold text-white">
                   Pranshu Chauhan
                 </p>
                 <p className="text-[11px] sm:text-xs text-slate-400">
-                  @pranshu · Full Stack Dev · Subhash Academy
+                  @pranshu · Full Stack Developer · LPU CSE
                 </p>
               </div>
             </motion.div>

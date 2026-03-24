@@ -14,25 +14,25 @@ type EducationItem = {
 
 const education: EducationItem[] = [
   {
-    duration: "2023 - Present",
+    duration: "Aug 2023 - Present",
     institution: "Lovely Professional University",
     degree: "B.Tech - Computer Science and Engineering",
-    location: "Punjab, India",
-    score: "CGPA 8.7",
+    location: "Phagwara, Punjab",
+    score: "CGPA 8.09",
   },
   {
-    duration: "2021 - 2023",
-    institution: "Sachchidanand Sinha College",
-    degree: "Intermediate (12th) - Science",
-    location: "Aurangabad, Bihar",
-    score: "82%",
+    duration: "Apr 2022 - Mar 2023",
+    institution: "Subhash Academy Chhibramau Kannauj",
+    degree: "Intermediate (12th)",
+    location: "Chhibramau, Uttar Pradesh",
+    score: "66.6%",
   },
   {
-    duration: "2019 - 2021",
-    institution: "DAV Public School",
-    degree: "Matriculation (10th) - Science",
-    location: "Aurangabad, Bihar",
-    score: "86%",
+    duration: "Apr 2020 - Mar 2021",
+    institution: "Subhash Academy Chhibramau Kannauj",
+    degree: "Matriculation (10th)",
+    location: "Chhibramau, Uttar Pradesh",
+    score: "62.67%",
   },
 ];
 
@@ -48,33 +48,20 @@ type AchievementItem = {
 
 const achievements: AchievementItem[] = [
   {
-    title: "Built strong consistency in DSA and problem solving with long-term coding discipline.",
-    period: "2025",
+    title: "Solved 650+ problems on LeetCode with a 180+ day streak, demonstrating strong problem-solving and algorithmic consistency.",
+    period: "Jan 2026",
     links: [{ label: "LeetCode", href: "https://leetcode.com/" }],
     icon: Flame,
     glow: "from-amber-300/45 via-orange-300/35 to-transparent",
   },
   {
-    title: "Reached advanced competitive coding milestones across multiple platforms.",
-    period: "2025",
+    title: "Solved 150+ problems on GeeksforGeeks, strengthening core concepts in data structures and algorithms.",
+    period: "Jan 2026",
     links: [
-      { label: "CodeChef", href: "https://www.codechef.com/" },
-      { label: "Codeforces", href: "https://codeforces.com/" },
+      { label: "GeeksforGeeks", href: "https://www.geeksforgeeks.org/" },
     ],
     icon: Trophy,
     glow: "from-emerald-300/45 via-cyan-300/35 to-transparent",
-  },
-  {
-    title: "Recognized for academic excellence and high consistency in core computer science subjects.",
-    period: "2024 - 2025",
-    icon: Medal,
-    glow: "from-violet-300/45 via-fuchsia-300/30 to-transparent",
-  },
-  {
-    title: "Contributed to technical planning and execution in college-level innovation events.",
-    period: "2024",
-    icon: Rocket,
-    glow: "from-sky-300/40 via-indigo-300/35 to-transparent",
   },
 ];
 
@@ -92,7 +79,7 @@ export default function EducationTimeline() {
   });
 
   const parallaxY = useTransform(scrollYProgress, [0, 1], [22, -22]);
-  const completion = useTransform(scrollYProgress, (v) => Math.min(100, Math.max(0, Math.round(v * 100))));
+  const progress = 26;
 
   return (
     <motion.section
@@ -101,7 +88,7 @@ export default function EducationTimeline() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.16 }}
       transition={{ duration: 0.55, ease: "easeOut" }}
-      className="relative mt-10 overflow-hidden rounded-3xl px-5 py-8 sm:px-7 sm:py-10"
+      className="relative mt-10 overflow-hidden rounded-3xl px-4 py-7 sm:px-7 sm:py-10"
     >
       <motion.div
         aria-hidden="true"
@@ -122,11 +109,11 @@ export default function EducationTimeline() {
           <h2 className="mt-2 text-2xl font-bold tracking-tight text-transparent sm:text-3xl bg-linear-to-r from-violet-200 via-pink-200 to-cyan-200 bg-clip-text">
             Education Timeline
           </h2>
-          <p className="mt-2 text-sm text-slate-200/85">A futuristic view of college, 12th, and 10th milestones.</p>
+          <p className="mt-2 text-sm text-slate-200/85">A clear snapshot of my B.Tech, Intermediate, and Matriculation journey.</p>
         </div>
 
         <div className="rounded-full bg-white/8 px-4 py-1.5 text-xs font-medium text-slate-100 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12)]">
-          Progress: <motion.span>{completion}</motion.span>%
+          Progress: <span>{progress}</span>%
         </div>
       </div>
 
@@ -214,7 +201,7 @@ export default function EducationTimeline() {
                 viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 0.42, delay: 0.05 * index }}
                 whileHover={{ y: -3 }}
-                className="group relative overflow-hidden rounded-2xl bg-white/8 p-4 shadow-[0_10px_28px_rgba(0,0,0,0.28)]"
+                className="group relative overflow-hidden rounded-2xl bg-white/8 p-3 shadow-[0_10px_28px_rgba(0,0,0,0.28)] sm:p-4"
               >
                 <div className={`pointer-events-none absolute inset-y-0 left-0 w-1.5 bg-linear-to-b ${item.glow}`} />
 

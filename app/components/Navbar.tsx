@@ -25,9 +25,9 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed left-1/2 top-4 z-50 w-[calc(100%-1.2rem)] max-w-5xl -translate-x-1/2">
+    <header className="fixed inset-x-0 top-3 z-50 px-2 sm:top-4 sm:px-4">
       <nav>
-        <div className="glass mx-auto flex w-full items-center justify-between rounded-full px-2 py-2 md:w-fit md:justify-center">
+        <div className="glass mx-auto flex w-full max-w-5xl items-center justify-between rounded-full px-2 py-2 md:w-fit md:justify-center">
           <Link href="/" className="pl-3 text-sm font-semibold tracking-wide text-foreground md:hidden">
             Pranshu<span className="text-accent">.dev</span>
           </Link>
@@ -52,7 +52,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setOpen((prev) => !prev)}
-            className="inline-flex rounded-full border border-white/15 p-2 text-slate-200 md:hidden"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-white/15 p-2 text-slate-200 md:hidden"
             aria-expanded={open}
             aria-label="Toggle menu"
           >
@@ -67,7 +67,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2 }}
-              className="glass mt-2 rounded-2xl p-3 md:hidden"
+              className="glass mt-2 max-h-[70vh] overflow-y-auto rounded-2xl p-3 md:hidden"
             >
               <ul className="space-y-1">
                 {links.map((link) => (
@@ -75,7 +75,7 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       onClick={() => setOpen(false)}
-                      className={`block rounded-lg px-3 py-2 text-sm transition hover:bg-white/8 ${
+                      className={`block min-h-11 rounded-lg px-3 py-2.5 text-sm transition hover:bg-white/8 ${
                         isActive(link.href)
                           ? "bg-indigo-500/15 text-indigo-200"
                           : "text-slate-200"

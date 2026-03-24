@@ -111,7 +111,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.45 }}
-            className="text-3xl font-bold tracking-tight text-white sm:text-5xl"
+            className="text-2xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
           >
             Let&apos;s Build Something <span className="gradient-text drop-shadow-[0_0_18px_rgba(167,139,250,0.45)]">Amazing</span> Together 🚀
           </motion.h2>
@@ -136,7 +136,7 @@ export default function ContactSection() {
 
         <div className="relative z-10 mt-8 grid gap-7 lg:grid-cols-[1fr_1.15fr]">
         <div>
-          <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
             <InfoCard icon={<Mail className="h-5 w-5 text-indigo-200" />} title="Email" value={socialLinks.email.replace("mailto:", "")} href={socialLinks.email} action={
               <button
                 type="button"
@@ -148,9 +148,9 @@ export default function ContactSection() {
               </button>
             } />
 
-            <InfoCard icon={<Phone className="h-5 w-5 text-cyan-200" />} title="Phone" value="+91 620 070 3348" href="tel:+916200703348" />
+            <InfoCard icon={<Phone className="h-5 w-5 text-cyan-200" />} title="Phone" value="+91 6388655896" href="tel:+916388655896" />
 
-            <InfoCard icon={<MapPin className="h-5 w-5 text-fuchsia-200" />} title="Location" value="Punjab, India" />
+            <InfoCard icon={<MapPin className="h-5 w-5 text-fuchsia-200" />} title="Location" value="Phagwara, Punjab, India" />
           </div>
 
           <div className="mt-6 text-sm text-slate-200">

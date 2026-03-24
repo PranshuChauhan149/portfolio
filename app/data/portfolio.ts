@@ -439,10 +439,10 @@ export const experiences: Experience[] = [
 
 export const socialLinks = {
   github: "https://github.com/PranshuChauhan149",
-  linkedin: "https://linkedin.com/in/",
+  linkedin: "https://linkedin.com/in/pranshu-chauhan",
   twitter: "https://twitter.com/",
   leetcode: "https://leetcode.com/",
   hackerrank: "https://www.hackerrank.com/",
   codeforces: "https://codeforces.com/",
-  email: "mailto:hello@yourmail.com",
+  email: "mailto:pranshuchauhan149@gmail.com",
 };

@@ -102,7 +102,7 @@ export default function CertificationsSection() {
   }, [activeFilter]);
 
   return (
-    <section className="section mt-12 relative overflow-visible">
+    <section className="section relative mt-10 overflow-visible sm:mt-12">
       <motion.div
         aria-hidden="true"
         animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0.7, 0.4] }}
@@ -128,7 +128,7 @@ export default function CertificationsSection() {
             <Award className="h-3.5 w-3.5" />
             Verified Credentials
           </p>
-          <h1 className="mt-5 text-4xl font-bold tracking-tight text-white sm:text-5xl">Certifications</h1>
+          <h1 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Certifications</h1>
           <p className="mx-auto mt-4 max-w-2xl text-slate-100 sm:text-lg">
             Professional learning milestones that validate my skills across full stack development,
             cloud, and AI.
@@ -140,7 +140,7 @@ export default function CertificationsSection() {
                 key={filter}
                 type="button"
                 onClick={() => setActiveFilter(filter)}
-                className={`rounded-full border px-4 py-1.5 text-sm font-medium transition ${
+                className={`min-h-11 rounded-full border px-4 py-1.5 text-sm font-medium transition ${
                   activeFilter === filter
                     ? "border-indigo-300/50 bg-indigo-500/20 text-indigo-100"
                     : "border-white/20 bg-white/8 text-slate-200 hover:border-indigo-300/35 hover:text-white"
@@ -161,9 +161,9 @@ export default function CertificationsSection() {
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.45, delay: index * 0.08, ease: "easeOut" }}
               whileHover={{ y: -6 }}
-              className="group rounded-2xl border border-white/15 bg-white/[0.07] p-6 backdrop-blur-md transition hover:border-indigo-300/45 hover:bg-white/10"
+              className="group rounded-2xl border border-white/15 bg-white/[0.07] p-4 backdrop-blur-md transition hover:border-indigo-300/45 hover:bg-white/10 sm:p-5 lg:p-6"
             >
-              <div className="relative mb-5 h-48 overflow-hidden rounded-xl border border-white/15">
+                <div className="relative mb-4 h-40 overflow-hidden rounded-xl border border-white/15 sm:mb-5 sm:h-48">
                 <Image
                   src={cert.image}
                   alt={`${cert.title} certificate preview`}
