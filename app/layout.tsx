@@ -29,6 +29,11 @@ export const metadata: Metadata = {
   description:
     "Premium full stack portfolio showcasing web, mobile, and AI/ML engineering projects.",
   metadataBase: new URL("https://example.vercel.app"),
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: ["/icon.svg"],
+    apple: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({
