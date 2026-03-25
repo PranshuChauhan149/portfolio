@@ -403,6 +403,17 @@ export function getRelatedProjects(project: Project, count = 2) {
 }
 export const experiences: Experience[] = [
   {
+    role: "Summer Training Trainee",
+    company: "LPU",
+    duration: "Jun 2025 - Jul 2025",
+    achievements: [
+      "Completed a skill development course on core data structures including arrays, linked lists, stacks, queues, trees, and graphs using C++.",
+      "Applied these concepts through hands-on C++ coding exercises and mini-projects, improving ability to write optimized, structured, and efficient programs.",
+      "Strengthened problem-solving fundamentals through practical implementation of data structures and algorithms.",
+      "Tech Stack: C++, Data Structures, Algorithms."
+    ],
+  },
+  {
     role: "Full Stack Developer Intern",
     company: "SkillCraft Technology",
     duration: "2024",

@@ -30,6 +30,15 @@ const companyMeta: Record<
     logo: string;
   }
 > = {
+  LPU: {
+    summary:
+      "Completed intensive summer training focused on Data Structures and Algorithms in C++, with practical implementation through coding exercises and mini-projects.",
+    stack: ["C++", "Data Structures", "Algorithms"],
+    impact: 74,
+    impactLabel: "Strengthened core DSA problem-solving",
+    workUrl: "/Certifications",
+    logo: "LP",
+  },
   "NovaEdge Labs": {
     summary:
       "Owned end-to-end delivery for high-scale product modules, balancing architecture quality with rapid execution.",
