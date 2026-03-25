@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { BookOpen, CalendarDays, FolderGit2, Github, Users } from "lucide-react";
+import { BookOpen, CalendarDays, FolderGit2, Github, Users, Download } from "lucide-react";
 import { useEffect, useState } from "react";
 import AnimatedSection from "@/app/components/AnimatedSection";
 import EducationTimeline from "@/app/components/EducationTimeline";
@@ -81,22 +81,149 @@ export default function AboutSection() {
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="https://github.com/PranshuChauhan149"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-indigo-700 transition"
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <Github className="h-4 w-4" /> GitHub Profile
-            </Link>
+              <Link
+                href="https://github.com/PranshuChauhan149"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-600 px-6 py-2.5 text-sm font-bold text-white shadow-[0_8px_24px_rgba(79,70,229,0.4)] hover:shadow-[0_12px_32px_rgba(79,70,229,0.6)] overflow-hidden transition-all duration-300"
+              >
+                {/* Animated background gradient */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-indigo-700 via-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100"
+                  animate={{
+                    backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: 'easeInOut'
+                  }}
+                />
 
-            <a
-              href="/resume.txt"
-              download
-              className="rounded-xl bg-gray-100 dark:bg-white/10 px-4 py-2.5 text-sm font-medium text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-white/20 transition"
+                {/* Shimmer effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20"
+                  animate={{ x: ['-100%', '100%'] }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: 'linear'
+                  }}
+                />
+
+                {/* Content */}
+                <motion.div
+                  className="relative flex items-center gap-2"
+                  whileHover={{ x: 4 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.div
+                    animate={{ scale: [1, 1.1, 1] }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: 'easeInOut'
+                    }}
+                  >
+                    <Github className="h-4 w-4" />
+                  </motion.div>
+                  <span>GitHub Profile</span>
+                </motion.div>
+
+                {/* Glow effect */}
+                <motion.div
+                  className="absolute -inset-1 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 -z-10 opacity-70 blur-lg group-hover:opacity-100"
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.5, 0.8, 0.5]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: 'easeInOut'
+                  }}
+                />
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
             >
-              Download Resume
-            </a>
+              <motion.a
+                href="/resume.pdf"
+                download="Pranshu_Chauhan_Resume.pdf"
+                whileHover={{ scale: 1.08, y: -2 }}
+                whileTap={{ scale: 0.95, y: 0 }}
+                className="group relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-600 px-6 py-2.5 text-sm font-bold text-white shadow-[0_8px_24px_rgba(6,182,212,0.4)] hover:shadow-[0_12px_32px_rgba(6,182,212,0.6)] overflow-hidden transition-all duration-300"
+              >
+                {/* Animated background gradient */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-blue-500 via-cyan-400 to-teal-400 opacity-0 group-hover:opacity-100"
+                  animate={{
+                    backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: 'easeInOut'
+                  }}
+                />
+
+                {/* Shimmer effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20"
+                  animate={{ x: ['-100%', '100%'] }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: 'linear'
+                  }}
+                />
+
+                {/* Content */}
+                <motion.div
+                  className="relative flex items-center gap-2"
+                  initial={{ x: 0 }}
+                  whileHover={{ x: 4 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.div
+                    animate={{ y: [0, -2, 0] }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: 'easeInOut'
+                    }}
+                  >
+                    <Download className="h-4 w-4" />
+                  </motion.div>
+                  <span>Download Resume</span>
+                </motion.div>
+
+                {/* Floating particles on hover */}
+                <motion.div
+                  className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 -z-10 opacity-70 blur-lg group-hover:opacity-100"
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.5, 0.8, 0.5]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: 'easeInOut'
+                  }}
+                />
+              </motion.a>
+            </motion.div>
           </div>
         </motion.div>
 
@@ -108,12 +235,13 @@ export default function AboutSection() {
           transition={{ duration: 0.5, delay: 0.12 }}
           className="mx-auto w-full max-w-sm rounded-2xl p-4"
         >
-          <div className="relative h-80 overflow-hidden rounded-xl bg-gradient-to-br from-indigo-500/20 via-gray-900 to-emerald-500/20">
+          <div className="relative aspect-square overflow-hidden rounded-xl bg-gradient-to-br from-indigo-500/20 via-gray-900 to-emerald-500/20 flex items-center justify-center">
             <Image
               src="/profile-photo.jpeg"
               alt="Pranshu profile"
               fill
-              className="object-cover"
+              className="object-cover object-top"
+              priority
             />
           </div>
         </motion.div>

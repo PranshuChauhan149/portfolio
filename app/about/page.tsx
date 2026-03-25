@@ -7,5 +7,10 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  return <AboutSection />;
+  return (
+    <>
+      <AboutSection />
+      
+    </>
+  );
 }

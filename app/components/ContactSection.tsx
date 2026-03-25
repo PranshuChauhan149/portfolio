@@ -1,7 +1,7 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
-import { motion } from "framer-motion";
+import { FormEvent, useEffect, useMemo, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   BriefcaseBusiness,
   CheckCircle2,
@@ -15,6 +15,7 @@ import {
   Send,
   Sparkles,
   Twitter,
+  AlertCircle,
 } from "lucide-react";
 import AnimatedSection from "@/app/components/AnimatedSection";
 import { socialLinks } from "@/app/data/portfolio";
@@ -42,6 +43,16 @@ export default function ContactSection() {
   const [errorText, setErrorText] = useState("");
   const [copiedEmail, setCopiedEmail] = useState(false);
   const hasStartedTyping = form.name.length > 0 || form.email.length > 0 || form.subject.length > 0 || form.message.length > 0;
+
+  // Auto-dismiss toast after 4 seconds
+  useEffect(() => {
+    if (status !== "idle") {
+      const timer = setTimeout(() => {
+        setStatus("idle");
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
 
   const reaction = useMemo(() => {
     if (form.message.length > 160) return "🔥 Great context!";
@@ -218,7 +229,7 @@ export default function ContactSection() {
                 placeholder=" "
                 className="peer w-full resize-none rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-black/25 px-4 pb-3 pt-6 text-gray-900 dark:text-white outline-none transition-colors duration-300 focus:border-fuchsia-300/60 focus:shadow-[0_0_0_3px_rgba(217,70,239,0.2)]"
               />
-              <span className="pointer-events-none absolute left-4 top-4 origin-left text-sm text-gray-600 dark:text-gray-400 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:scale-90 peer-focus:text-indigo-500 dark:peer-focus:text-indigo-200">
+              <span className={`pointer-events-none absolute left-4 origin-left text-sm transition-all ${form.message.length > 0 ? "top-2 scale-90 text-indigo-500 dark:text-indigo-200" : "top-4 scale-100 text-gray-600 dark:text-gray-400"}`}>
                 Message
               </span>
             </label>
@@ -245,22 +256,35 @@ export default function ContactSection() {
               </>
             )}
           </motion.button>
+        </motion.form>
+        </div>
 
+        {/* Toast Notifications */}
+        <AnimatePresence>
           {status === "success" && (
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="mt-4 inline-flex items-center gap-2 rounded-lg bg-emerald-500/18 px-3 py-2 text-sm text-emerald-200 shadow-[0_0_22px_rgba(16,185,129,0.3)]"
+              initial={{ opacity: 0, y: 20, x: "-50%" }}
+              animate={{ opacity: 1, y: 0, x: "-50%" }}
+              exit={{ opacity: 0, y: 20, x: "-50%" }}
+              className="fixed bottom-6 left-1/2 z-50 flex items-center gap-3 rounded-lg bg-emerald-500/90 backdrop-blur-sm px-4 py-3 text-sm text-white shadow-[0_10px_30px_rgba(16,185,129,0.4)]"
             >
-              <CheckCircle2 className="h-4 w-4" /> Message sent successfully.
+              <CheckCircle2 className="h-5 w-5 shrink-0" />
+              <span>Message sent successfully! ✨</span>
             </motion.div>
           )}
 
           {status === "error" && (
-            <p className="mt-4 text-sm text-red-300">{errorText || "Could not send message right now."}</p>
+            <motion.div
+              initial={{ opacity: 0, y: 20, x: "-50%" }}
+              animate={{ opacity: 1, y: 0, x: "-50%" }}
+              exit={{ opacity: 0, y: 20, x: "-50%" }}
+              className="fixed bottom-6 left-1/2 z-50 flex items-center gap-3 rounded-lg bg-red-500/90 backdrop-blur-sm px-4 py-3 text-sm text-white shadow-[0_10px_30px_rgba(239,68,68,0.4)]"
+            >
+              <AlertCircle className="h-5 w-5 shrink-0" />
+              <span>{errorText || "Failed to send message."}</span>
+            </motion.div>
           )}
-        </motion.form>
-        </div>
+        </AnimatePresence>
       </div>
     </AnimatedSection>
   );
@@ -290,7 +314,7 @@ function Field({
         placeholder=" "
         className="peer w-full rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-black/25 px-4 pb-3 pt-6 text-gray-900 dark:text-white outline-none transition-colors duration-300 focus:border-indigo-300/60 focus:shadow-[0_0_0_3px_rgba(99,102,241,0.2)]"
       />
-      <span className="pointer-events-none absolute left-4 top-4 origin-left text-sm text-gray-600 dark:text-gray-400 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:scale-90 peer-focus:text-indigo-500 dark:peer-focus:text-indigo-200">
+      <span className={`pointer-events-none absolute left-4 origin-left text-sm transition-all ${value ? "top-2 scale-90 text-indigo-500 dark:text-indigo-200" : "top-4 scale-100 text-gray-600 dark:text-gray-400"}`}>
         {label}
       </span>
     </label>

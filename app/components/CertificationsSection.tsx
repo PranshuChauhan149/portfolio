@@ -15,13 +15,14 @@ type Certification = {
   image: string;
 };
 export const certifications: Certification[] = [
+  // ================= NETWORKING =================
   {
     title: "Computer Communications Specialization",
     issuer: "University of Colorado System",
     date: "Nov 2024",
     category: "Networking",
     skills: ["Computer Networks", "TCP/IP", "Routing", "Protocols"],
-    image: "/certificates/network-specialization.png",
+    image: "/certificates/network-specialization.svg",
     link: "#",
   },
   {
@@ -30,7 +31,7 @@ export const certifications: Certification[] = [
     date: "Nov 2024",
     category: "Networking",
     skills: ["Packet Switching", "Network Algorithms", "Routing"],
-    image: "/certificates/packet-switching.png",
+    image: "/certificates/packet-switching.svg",
     link: "#",
   },
   {
@@ -39,7 +40,7 @@ export const certifications: Certification[] = [
     date: "Oct 2024",
     category: "Networking",
     skills: ["TCP/IP", "Networking Protocols", "Advanced Networking"],
-    image: "/certificates/tcp-ip.png",
+    image: "/certificates/tcp-ip.svg",
     link: "#",
   },
   {
@@ -48,7 +49,7 @@ export const certifications: Certification[] = [
     date: "Oct 2024",
     category: "Networking",
     skills: ["Peer-to-Peer", "LAN", "Network Architecture"],
-    image: "/certificates/p2p-lan.png",
+    image: "/certificates/p2p-lan.svg",
     link: "#",
   },
   {
@@ -57,7 +58,7 @@ export const certifications: Certification[] = [
     date: "Oct 2024",
     category: "Networking",
     skills: ["Network Basics", "Communication Models", "OSI Model"],
-    image: "/certificates/network-fundamentals.png",
+    image: "/certificates/network-fundamentals.svg",
     link: "#",
   },
   {
@@ -66,16 +67,18 @@ export const certifications: Certification[] = [
     date: "Sep 2024",
     category: "Networking",
     skills: ["Networking Basics", "Internet Protocols", "DNS", "HTTP"],
-    image: "/certificates/google-networking.png",
+    image: "/certificates/google-networking.svg",
     link: "#",
   },
+
+  // ================= SYSTEMS =================
   {
     title: "Introduction to Hardware and Operating Systems",
     issuer: "IBM",
     date: "Sep 2024",
     category: "Systems",
     skills: ["Operating Systems", "Computer Hardware", "System Architecture"],
-    image: "/certificates/ibm-os.png",
+    image: "/certificates/ibm-os.svg",
     link: "#",
   },
   {
@@ -84,9 +87,102 @@ export const certifications: Certification[] = [
     date: "Sep 2024",
     category: "Systems",
     skills: ["Digital Logic", "Processors", "Computer Architecture"],
-    image: "/certificates/digital-systems.png",
+    image: "/certificates/digital-systems.svg",
     link: "#",
-  }
+  },
+
+  // ================= AI / ML =================
+  {
+    title: "Build Generative AI Apps and Solutions with No-Code Tools",
+    issuer: "Infosys Springboard",
+    date: "Aug 2025",
+    category: "AI/ML",
+    skills: ["Generative AI", "No-Code Tools", "AI Applications"],
+    image: "/certificates/infosys-genai-nocode.svg",
+    link: "#",
+  },
+  {
+    title: "Master Generative AI & ChatGPT Tools",
+    issuer: "Infosys Springboard",
+    date: "Aug 2025",
+    category: "AI/ML",
+    skills: ["ChatGPT", "Generative AI", "AI Tools"],
+    image: "/certificates/infosys-genai-master.svg",
+    link: "#",
+  },
+  {
+    title: "ChatGPT-4 Prompt Engineering: ChatGPT, Generative AI & LLM",
+    issuer: "Infosys Springboard",
+    date: "Aug 2025",
+    category: "AI/ML",
+    skills: ["Prompt Engineering", "LLMs", "ChatGPT"],
+    image: "/certificates/infosys-prompt.svg",
+    link: "#",
+  },
+
+  // ================= CORE CS =================
+  {
+    title: "Computational Theory: Language Principles & Finite Automata",
+    issuer: "Infosys Springboard",
+    date: "Aug 2025",
+    category: "Computer Science",
+    skills: ["Automata Theory", "Formal Languages", "Theory of Computation"],
+    image: "/certificates/infosys-automata.svg",
+    link: "#",
+  },
+
+  // ================= CLOUD =================
+  {
+    title: "Cloud Computing (Elite)",
+    issuer: "NPTEL (IIT Kharagpur)",
+    date: "Apr 2025",
+    category: "Cloud",
+    skills: ["Cloud Computing", "Distributed Systems", "Virtualization"],
+    image: "/certificates/nptel-cloud.svg",
+    link: "#",
+  },
+
+  // ================= DSA =================
+  {
+    title: "Data Structures & Algorithms (Microlearning)",
+    issuer: "Board Infinity",
+    date: "Feb 2024",
+    category: "DSA",
+    skills: ["Data Structures", "Algorithms", "Problem Solving"],
+    image: "/certificates/board-dsa.svg",
+    link: "#",
+  },
+  {
+    title: "Data Structures and Algorithms using C++",
+    issuer: "Lovely Professional University",
+    date: "Jul 2025",
+    category: "DSA",
+    skills: ["C++", "DSA", "Problem Solving"],
+    image: "/certificates/lpu-dsa.svg",
+    link: "#",
+  },
+
+  // ================= WEB =================
+  {
+    title: "Responsive Web Design Certification",
+    issuer: "freeCodeCamp",
+    date: "Oct 2023",
+    category: "Web Development",
+    skills: ["HTML", "CSS", "Responsive Design"],
+    image: "/certificates/fcc-responsive.svg",
+    link: "#",
+  },
+
+  // ================= HACKATHON =================
+  {
+    title: "HackWithVertos 1.0 - 24 Hour Hackathon",
+    issuer: "Lovely Professional University",
+    date: "Feb 2024",
+    category: "Hackathon",
+    skills: ["Problem Solving", "Teamwork", "Development"],
+    image: "/certificates/hackathon-lpu.svg",
+    link: "#",
+  },
 ];
 export default function CertificationsSection() {
   const [activeFilter, setActiveFilter] = useState<string>("All");

@@ -29,8 +29,6 @@ type SocialItem = {
 };
 
 export default function SocialConnectHub() {
-  const [spot, setSpot] = useState({ x: 50, y: 50 });
-
   const socials = useMemo<SocialItem[]>(
     () => [
       {
@@ -94,97 +92,45 @@ export default function SocialConnectHub() {
   );
 
   return (
-    <section className="section mt-12 sm:mt-16">
-      <div
-        className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white p-4 shadow-[0_30px_100px_rgba(0,0,0,0.18)] transition-colors duration-300 dark:border-slate-700/45 dark:bg-linear-to-br dark:from-[#02040a]/98 dark:via-[#050814]/97 dark:to-[#0a0715]/98 dark:shadow-[0_30px_100px_rgba(0,0,0,0.7)] sm:p-6 lg:p-7"
-        onMouseMove={(e) => {
-          const b = e.currentTarget.getBoundingClientRect();
-          setSpot({ x: ((e.clientX - b.left) / b.width) * 100, y: ((e.clientY - b.top) / b.height) * 100 });
-        }}
-      >
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_16%,rgba(79,70,229,0.2),transparent_42%),radial-gradient(circle_at_86%_82%,rgba(236,72,153,0.15),transparent_44%),radial-gradient(circle_at_52%_68%,rgba(14,165,233,0.1),transparent_48%)]" />
-        <div
-          className="pointer-events-none absolute inset-0 transition-all duration-200"
-          style={{
-            background: `radial-gradient(circle at ${spot.x}% ${spot.y}%, rgba(99,102,241,0.2), rgba(255,255,255,0) 38%)`,
-          }}
-        />
+    <section className="section mt-4 sm:mt-8">
+      <div className="grid gap-4 sm:gap-6 lg:grid-cols-[7fr_3fr]">
+        {/* Left Card - Coding Platforms */}
+        <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-4 shadow-sm transition-colors duration-300 dark:border-slate-700/45 dark:bg-slate-900/50 sm:p-6 flex flex-col">
+          <div className="pointer-events-none absolute inset-0 bg-[conic-gradient(from_180deg_at_50%_50%,rgba(99,102,241,0.1),rgba(14,165,233,0.08),rgba(244,114,182,0.08),rgba(99,102,241,0.1))]" />
 
-        <ParticleField />
-
-        <div className="relative z-10 mb-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-200/90">Digital Identity Hub</p>
-          <h2 className="mt-2 text-xl font-bold text-gray-900 dark:text-white sm:text-2xl">
-            Social Connect <span className="bg-linear-to-r from-cyan-200 via-indigo-200 to-fuchsia-200 bg-clip-text text-transparent">+ Contact CTA</span>
-          </h2>
-          <p className="mt-2 hidden max-w-2xl text-xs text-gray-600 dark:text-gray-400 sm:block sm:text-sm">
-            Explore social presence + coding profiles in one immersive dark hub.
-          </p>
-        </div>
-
-        <div className="relative z-10 grid gap-4 sm:gap-6 lg:grid-cols-12">
-          <div className="lg:col-span-8">
-            <div className="relative min-h-64 overflow-hidden rounded-[2rem] border border-gray-200 bg-white p-4 backdrop-blur-2xl transition-colors duration-300 dark:border-slate-700/50 dark:bg-black/25 sm:h-80 sm:p-5">
-              <div className="pointer-events-none absolute inset-0 bg-[conic-gradient(from_180deg_at_50%_50%,rgba(99,102,241,0.1),rgba(14,165,233,0.08),rgba(244,114,182,0.08),rgba(99,102,241,0.1))]" />
-
-              <div className="pointer-events-none absolute inset-x-6 top-1/2 hidden h-px -translate-y-1/2 bg-linear-to-r from-transparent via-white/25 to-transparent lg:block" />
-
-              <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-indigo-400/30 bg-indigo-500/10 px-3 py-1 text-[11px] text-indigo-700 dark:text-indigo-200">
-                <Code2 className="h-3.5 w-3.5" />
-                Coding Platforms Included
-              </div>
-
-              <div className="relative hidden h-full lg:block">
-                {socials.map((social, i) => (
-                  <FloatingSocialTile key={social.name} social={social} index={i} />
-                ))}
-              </div>
-
-              <div className="relative grid grid-cols-2 gap-3 pt-12 sm:grid-cols-3 lg:hidden">
-                {socials.map((social, i) => (
-                  <motion.div
-                    key={social.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ delay: i * 0.06, duration: 0.4 }}
-                    className="min-w-0"
-                  >
-                    <FloatingSocialTile social={{ ...social, pos: { x: 0, y: 0 } }} index={i} mobile />
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+          <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-indigo-400/30 bg-indigo-500/10 px-3 py-1 text-[11px] text-indigo-700 dark:text-indigo-200 z-10">
+            <Code2 className="h-3.5 w-3.5" />
+            Coding Platforms Included
           </div>
 
-          <div className="relative lg:col-span-4">
-            <ConnectCard />
+          {/* Desktop Layout */}
+          <div className="relative hidden lg:flex flex-1 items-center justify-center min-h-80">
+            {socials.map((social, i) => (
+              <FloatingSocialTile key={social.name} social={social} index={i} />
+            ))}
+          </div>
+
+          {/* Mobile Layout */}
+          <div className="relative grid grid-cols-2 gap-3 pt-12 sm:grid-cols-3 lg:hidden">
+            {socials.map((social, i) => (
+              <motion.div
+                key={social.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: i * 0.06, duration: 0.4 }}
+                className="min-w-0"
+              >
+                <FloatingSocialTile social={{ ...social, pos: { x: 0, y: 0 } }} index={i} mobile />
+              </motion.div>
+            ))}
           </div>
         </div>
+
+        {/* Right Card - Connect */}
+        <ConnectCard />
       </div>
     </section>
-  );
-}
-
-function ParticleField() {
-  const dots = useMemo(
-    () => Array.from({ length: 14 }, (_, i) => ({ id: i, x: 8 + (i * 7) % 88, y: 12 + (i * 11) % 78, size: (i % 3) + 2 })),
-    [],
-  );
-
-  return (
-    <>
-      {dots.map((dot) => (
-        <motion.span
-          key={dot.id}
-          aria-hidden="true"
-          className="pointer-events-none absolute rounded-full bg-gray-300 dark:bg-white/55"
-          style={{ left: `${dot.x}%`, top: `${dot.y}%`, width: dot.size, height: dot.size }}
-          animate={{ y: [0, -6, 0] }}
-          transition={{ duration: 8 + (dot.id % 4), repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-        />
-      ))}
-    </>
   );
 }
 
@@ -244,7 +190,6 @@ function FloatingSocialTile({ social, index, mobile = false }: { social: SocialI
     </motion.a>
   );
 }
-
 function ConnectCard() {
   return (
     <motion.div
@@ -252,42 +197,53 @@ function ConnectCard() {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.48 }}
-      className="relative isolate flex min-w-0 flex-col overflow-hidden rounded-[2rem] border border-gray-200 dark:border-slate-600/45 bg-white dark:bg-black/45 p-4 backdrop-blur-2xl transition-colors duration-300 sm:p-5"
+      className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-5 shadow-sm dark:border-slate-700/45 dark:bg-slate-900/50"
     >
-      <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-indigo-200/8 via-transparent to-transparent" />
-      <div className="pointer-events-none absolute left-0 top-1/2 h-44 w-20 -translate-y-1/2 rounded-r-full bg-gray-100 dark:bg-white/6 blur-sm" />
-      <div className="pointer-events-none absolute right-0 top-1/2 h-44 w-20 -translate-y-1/2 rounded-l-full bg-gray-100 dark:bg-white/6 blur-sm" />
+      {/* subtle gradient overlay */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-indigo-200/10 via-transparent to-transparent" />
 
-      <div className="relative z-10 mb-3 flex justify-center">
-        <span className="inline-flex items-center gap-2 rounded-full bg-emerald-500/20 px-3.5 py-1 text-xs font-medium text-emerald-700 dark:text-emerald-200 sm:text-sm">
+      <div className="relative z-10 flex h-full flex-col items-center text-center gap-5">
+
+        {/* STATUS */}
+        <span className="inline-flex items-center gap-2 rounded-full bg-emerald-500/20 px-3.5 py-1 text-xs font-medium text-emerald-700 dark:text-emerald-200">
           <span className="h-2.5 w-2.5 rounded-full bg-lime-400 shadow-[0_0_10px_rgba(132,204,22,0.8)]" />
           Available for Work
         </span>
-      </div>
 
-      <div className="relative z-10 mb-4 flex justify-center">
+        {/* PROFILE IMAGE (FIXED POSITION) */}
         <Image
           src="/profile-photo.jpeg"
           alt="Pranshu Chauhan"
-          width={82}
-          height={82}
-          className="rounded-2xl border border-gray-300 dark:border-white/15"
+          width={90}
+          height={90}
+          className="rounded-xl border border-gray-300 dark:border-white/15 object-cover object-top"
         />
-      </div>
 
-      <h3 className="relative z-10 text-center text-[1.25rem] font-semibold leading-tight text-gray-900 dark:text-white sm:text-[1.8rem] lg:text-[1.95rem]">
-        Let&apos;s work <span className="bg-linear-to-r from-blue-500 via-indigo-500 to-purple-500 bg-clip-text text-transparent">together</span>
-        <br />
-        on your next <span className="bg-linear-to-r from-violet-500 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent">project</span>
-      </h3>
-      <a
-        href={socialLinks.email}
-        className="relative z-10 mt-4 flex min-w-0 items-center gap-2.5 rounded-3xl border border-gray-200 dark:border-white/20 bg-gray-100 dark:bg-white/12 px-3 py-2.5 text-sm font-medium text-gray-800 dark:text-gray-200 backdrop-blur-xl transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-white/15 sm:px-4 sm:py-3 sm:text-base"
-        aria-label="Send email"
-      >
-        <Mail className="h-5 w-5 shrink-0 text-gray-800 dark:text-slate-100" />
-        <span className="truncate">{socialLinks.email.replace("mailto:", "")}</span>
-      </a>
+        {/* TEXT */}
+        <h3 className="text-lg sm:text-xl font-semibold leading-tight text-gray-900 dark:text-white">
+          Let&apos;s work{" "}
+          <span className="bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 bg-clip-text text-transparent">
+            together
+          </span>
+          <br />
+          on your next{" "}
+          <span className="bg-gradient-to-r from-violet-500 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent">
+            project
+          </span>
+        </h3>
+
+        {/* EMAIL */}
+        <a
+          href={socialLinks.email}
+          className="flex items-center gap-2.5 rounded-xl border border-gray-200 dark:border-white/20 bg-gray-100 dark:bg-white/10 px-4 py-2.5 text-sm font-medium text-gray-800 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/15 transition"
+        >
+          <Mail className="h-5 w-5 shrink-0" />
+          <span className="truncate">
+            {socialLinks.email.replace("mailto:", "")}
+          </span>
+        </a>
+
+      </div>
     </motion.div>
   );
 }

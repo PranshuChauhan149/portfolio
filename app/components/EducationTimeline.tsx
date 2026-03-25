@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import { ExternalLink, Flame, GraduationCap, Medal, Rocket, School, Trophy } from "lucide-react";
+import { ExternalLink, Flame, GraduationCap, Medal, Rocket, School, Trophy, Zap } from "lucide-react";
 
 type EducationItem = {
   duration: string;
@@ -48,23 +48,52 @@ type AchievementItem = {
 
 const achievements: AchievementItem[] = [
   {
-    title: "Solved 650+ problems on LeetCode with a 180+ day streak, demonstrating strong problem-solving and algorithmic consistency.",
-    period: "Jan 2026",
-    links: [{ label: "LeetCode", href: "https://leetcode.com/" }],
+    title:
+      "Solved 700+ problems on LeetCode with a 250+ day streak and 1500+ yearly submissions, demonstrating strong problem-solving skills and consistency in Data Structures & Algorithms.",
+    period: "Mar 2026",
+    links: [
+      { label: "LeetCode", href: "https://leetcode.com/u/Pranshu_chauhan/" },
+    ],
     icon: Flame,
     glow: "from-amber-300/45 via-orange-300/35 to-transparent",
   },
   {
-    title: "Solved 150+ problems on GeeksforGeeks, strengthening core concepts in data structures and algorithms.",
-    period: "Jan 2026",
+    title:
+      "Achieved a contest rating of 1496 on LeetCode with participation in 20+ contests, showcasing competitive programming and analytical problem-solving abilities.",
+    period: "Mar 2026",
     links: [
-      { label: "GeeksforGeeks", href: "https://www.geeksforgeeks.org/" },
+      { label: "LeetCode", href: "https://leetcode.com/u/Pranshu_chauhan/" },
     ],
     icon: Trophy,
     glow: "from-emerald-300/45 via-cyan-300/35 to-transparent",
   },
+  {
+    title:
+      "Earned 13+ badges on LeetCode including the prestigious 365 Days Badge, highlighting long-term consistency and dedication to coding practice.",
+    period: "Mar 2026",
+    links: [
+      { label: "LeetCode", href: "https://leetcode.com/u/Pranshu_chauhan/" },
+    ],
+    icon: Medal,
+    glow: "from-purple-300/45 via-pink-300/35 to-transparent",
+  },
+  {
+    title:
+      "Participated in a 24-hour hackathon (HackWithVertos 1.0) at Lovely Professional University, collaborating in a team to build innovative solutions under time constraints.",
+    period: "Feb 2024",
+    links: [{ label: "Hackathon", href: "#" }],
+    icon: Rocket,
+    glow: "from-blue-300/45 via-indigo-300/35 to-transparent",
+  },
+  {
+    title:
+      "Maintained consistent daily coding activity with hundreds of submissions annually, reflecting discipline, dedication, and continuous learning mindset.",
+    period: "2026",
+    links: [{ label: "Practice", href: "#" }],
+    icon: Zap,
+    glow: "from-yellow-300/45 via-orange-300/35 to-transparent",
+  },
 ];
-
 export default function EducationTimeline() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const { scrollYProgress } = useScroll({

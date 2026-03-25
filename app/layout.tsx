@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Poppins, Geist } from "next/font/google";
 import BackgroundGrid from "@/app/components/BackgroundGrid";
 import Footer from "@/app/components/Footer";
+import Chatbot from "@/app/components/Chatbot";
 import MouseGlow from "@/app/components/MouseGlow";
 import Navbar from "@/app/components/Navbar";
 import RouteEffects from "@/app/components/RouteEffects";
@@ -50,6 +51,7 @@ export default function RootLayout({
           <RouteEffects />
           <Navbar />
           <main className="relative z-10 overflow-x-clip pb-10 pt-24 sm:pt-26 lg:pt-28">{children}</main>
+          <Chatbot />
           <Footer />
         </ThemeProvider>
       </body>

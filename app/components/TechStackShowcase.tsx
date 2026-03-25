@@ -258,7 +258,7 @@ export default function TechStackShowcase() {
   const p = circlePath(active?.level ?? 0);
 
   return (
-    <section className="section mt-14 sm:mt-16">
+    <section className="section mt-8 sm:mt-8">
       <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white p-6 shadow-[0_25px_90px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/10 dark:bg-linear-to-br dark:from-[#0b1022]/88 dark:via-[#0f172d]/84 dark:to-[#101b34]/88 dark:shadow-[0_25px_90px_rgba(0,0,0,0.45)] sm:p-8">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(99,102,241,0.18),transparent_45%),radial-gradient(circle_at_80%_80%,rgba(56,189,248,0.15),transparent_45%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size-[38px_38px]" />

@@ -27,12 +27,119 @@ export type Experience = {
   achievements: string[];
 };
 
+export type Highlight = {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  date: string;
+  link: string;
+  platform: string;
+};
 export const roles = [
-  "Full Stack Engineer",
-  "Web Developer",
-  "Mobile Developer",
-  "AI/ML Builder",
+  "Full Stack Developer (MERN)",
+  "Frontend Developer (React.js)",
+  "Backend Developer (Node.js & Express)",
+  "AI & Generative AI Developer",
+  "Problem Solver (DSA & Competitive Programming)",
 ];
+
+
+export const highlights: Highlight[] = [
+  {
+    id: "leetcode-problems",
+    title: "Solved 700+ problems on LeetCode",
+    description:
+      "Solved 700+ problems on LeetCode including Easy, Medium, and Hard, showcasing strong problem-solving skills and deep understanding of Data Structures & Algorithms.",
+    icon: "🔥",
+    date: "Mar 2026",
+    platform: "LeetCode",
+    link: "https://leetcode.com/u/Pranshu_chauhan/",
+  },
+  {
+    id: "leetcode-streak",
+    title: "250+ days coding streak on LeetCode",
+    description:
+      "Maintained a coding streak of 250+ days with 1500+ submissions in a year, demonstrating consistency, discipline, and dedication to daily problem solving.",
+    icon: "📈",
+    date: "Mar 2026",
+    platform: "LeetCode",
+    link: "https://leetcode.com/u/Pranshu_chauhan/",
+  },
+  {
+    id: "leetcode-contest",
+    title: "LeetCode Contest Rating 1496",
+    description:
+      "Achieved a contest rating of 1496 on LeetCode and participated in 20+ contests, reflecting strong competitive programming and analytical skills.",
+    icon: "🏆",
+    date: "Mar 2026",
+    platform: "LeetCode",
+    link: "https://leetcode.com/u/Pranshu_chauhan/",
+  },
+  {
+    id: "leetcode-ranking",
+    title: "Global Rank 78,000+ on LeetCode",
+    description:
+      "Ranked among top global users on LeetCode with consistent performance across multiple contests and problem-solving challenges.",
+    icon: "🌍",
+    date: "Mar 2026",
+    platform: "LeetCode",
+    link: "https://leetcode.com/u/Pranshu_chauhan/",
+  },
+  {
+    id: "leetcode-badges",
+    title: "Earned 13+ badges including 365 Days Badge",
+    description:
+      "Earned multiple LeetCode badges including the prestigious 365 Days Badge, highlighting long-term consistency and active participation.",
+    icon: "🎖️",
+    date: "Mar 2026",
+    platform: "LeetCode",
+    link: "https://leetcode.com/u/Pranshu_chauhan/",
+  },
+
+  // BONUS (extra strong points I added 🔥)
+  {
+    id: "problem-solving",
+    title: "Strong DSA & Problem Solving Skills",
+    description:
+      "Solved complex algorithmic problems across arrays, graphs, dynamic programming, and trees, building a solid foundation for technical interviews.",
+    icon: "🧠",
+    date: "2026",
+    platform: "DSA",
+    link: "#",
+  },
+  {
+    id: "consistency",
+    title: "Highly Consistent Coding Practice",
+    description:
+      "Maintained near-daily coding activity with hundreds of submissions yearly, showing strong dedication towards continuous learning and improvement.",
+    icon: "⚡",
+    date: "2026",
+    platform: "Practice",
+    link: "#",
+  },
+  {
+  id: "hackathon",
+  title: "Participated in 24-Hour Hackathon (HackWithVertos 1.0)",
+  description:
+    "Participated in a 24-hour hackathon at Lovely Professional University, collaborating in a team to build innovative solutions under time constraints, showcasing problem-solving and teamwork skills.",
+  icon: "🚀",
+  date: "Feb 2024",
+  platform: "Hackathon",
+  link: "#",
+},
+{
+    id: "geeksforgeeks",
+    title: "Solved 150+ problems on GeeksforGeeks",
+    description: "Solved 150+ problems on GeeksforGeeks, strengthening core concepts in data structures and algorithms.",
+    icon: "🏆",
+    date: "Jan 2026",
+    platform: "GeeksforGeeks",
+    link: "https://www.geeksforgeeks.org/",
+  },
+];
+
+
 
 export const stats = [
   { label: "Projects Delivered", value: "35+" },

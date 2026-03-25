@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { BriefcaseBusiness, Clock3 } from "lucide-react";
+import { BriefcaseBusiness, Clock3, Download } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { roles } from "@/app/data/portfolio";
 
@@ -47,6 +47,15 @@ export default function HeroSection() {
     hour12: false,
   })}`;
 
+  const handleDownloadResume = () => {
+    const link = document.createElement("a");
+    link.href = "/resume.pdf";
+    link.download = "Pranshu_Chauhan_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   // Animations
   const container = {
     hidden: {},
@@ -78,12 +87,12 @@ export default function HeroSection() {
 
             {/* LEFT */}
             <motion.div variants={item} className="flex items-center gap-3">
-              <div className="relative w-12 h-12 sm:w-14 sm:h-14">
+              <div className="relative w-12 h-12 sm:w-14 sm:h-14 shrink-0 flex items-center justify-center">
                 <Image
                   src="/profile-photo.jpeg"
                   alt="Pranshu"
                   fill
-                  className="rounded-full object-cover border border-gray-200 dark:border-white/10"
+                  className="rounded-full object-cover object-top border border-gray-200 dark:border-white/10"
                   priority
                 />
               </div>
@@ -156,11 +165,78 @@ export default function HeroSection() {
           {/* FOOTER */}
           <motion.div
             variants={item}
-            className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-gray-200 dark:border-white/10 pt-3.5"
+            className="mt-5 flex flex-wrap items-center justify-between gap-4 border-t border-gray-200 dark:border-white/10 pt-3.5"
           >
             <p className="text-xs italic text-gray-500 dark:text-gray-500">
-              “Design less noise, deliver more value.”
+              "Design less noise, deliver more value."
             </p>
+            <motion.button
+              onClick={handleDownloadResume}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              whileHover={{ scale: 1.08, y: -2 }}
+              whileTap={{ scale: 0.95, y: 0 }}
+              className="relative group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 px-6 py-2.5 text-xs sm:text-sm font-bold text-white shadow-[0_8px_24px_rgba(99,102,241,0.4)] hover:shadow-[0_12px_32px_rgba(99,102,241,0.6)] transition-all duration-300 overflow-hidden"
+            >
+              {/* Animated background gradient */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-indigo-400 to-indigo-600 opacity-0 group-hover:opacity-100"
+                animate={{ 
+                  x: ['-100%', '100%'],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+
+              {/* Shimmer effect */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20"
+                animate={{ x: ['-100%', '100%'] }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              />
+
+              {/* Content */}
+              <motion.div
+                className="relative flex items-center gap-2"
+                initial={{ x: 0 }}
+                whileHover={{ x: 4 }}
+                transition={{ duration: 0.3 }}
+              >
+                <motion.div
+                  animate={{ y: [0, -2, 0] }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  <Download className="h-4 w-4" />
+                </motion.div>
+                <span>Resume</span>
+              </motion.div>
+
+              {/* Floating particles on hover */}
+              <motion.div
+                className="absolute -inset-1 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-500 -z-10 opacity-70 blur-lg group-hover:opacity-100"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.5, 0.8, 0.5]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+            </motion.button>
           </motion.div>
         </motion.div>
       </div>
