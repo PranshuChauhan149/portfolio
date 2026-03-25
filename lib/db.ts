@@ -1,18 +1,32 @@
-import mongoose from 'mongoose';
+import mongoose, { type Mongoose } from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI = process.env.MONGODB_URI ?? "";
 
 if (!MONGODB_URI) {
-  throw new Error('Please define the MONGODB_URI environment variable inside .env.local');
+  throw new Error("Please define the MONGODB_URI environment variable inside .env.local");
 }
 
-let cached = global.mongoose;
+type MongooseCache = {
+  conn: Mongoose | null;
+  promise: Promise<Mongoose> | null;
+};
 
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
+declare global {
+  var mongooseCache: MongooseCache | undefined;
 }
 
-export async function connectDB() {
+const globalForMongoose = globalThis as typeof globalThis & {
+  mongooseCache?: MongooseCache;
+};
+
+const cached = globalForMongoose.mongooseCache ?? {
+  conn: null,
+  promise: null,
+};
+
+globalForMongoose.mongooseCache = cached;
+
+export async function connectDB(): Promise<Mongoose> {
   if (cached.conn) {
     return cached.conn;
   }
@@ -22,9 +36,7 @@ export async function connectDB() {
       bufferCommands: false,
     };
 
-    cached.promise = mongoose.connect(MONGODB_URI!, opts).then((mongoose) => {
-      return mongoose;
-    });
+    cached.promise = mongoose.connect(MONGODB_URI, opts);
   }
 
   try {
@@ -35,9 +47,4 @@ export async function connectDB() {
   }
 
   return cached.conn;
-}
-
-// Add type declaration for global object
-declare global {
-  var mongoose: { conn: typeof mongoose | null; promise: Promise<typeof mongoose> | null };
 }
