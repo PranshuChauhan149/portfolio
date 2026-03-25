@@ -84,18 +84,18 @@ export default function ExperienceSection() {
 
   return (
     <AnimatedSection id="experience" className="section mt-24 scroll-mt-24">
-      <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-linear-to-br from-[#050712]/95 via-[#100b22]/92 to-[#070b18]/95 p-6 shadow-[0_26px_90px_rgba(0,0,0,0.55)] sm:p-8">
+      <div className="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-white/10 bg-white p-6 shadow-[0_26px_90px_rgba(0,0,0,0.55)] transition-colors duration-300 dark:bg-linear-to-br dark:from-[#050712]/95 dark:via-[#100b22]/92 dark:to-[#070b18]/95 sm:p-8">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_12%,rgba(99,102,241,0.2),transparent_42%),radial-gradient(circle_at_84%_80%,rgba(236,72,153,0.14),transparent_45%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size-[36px_36px]" />
 
         <div className="relative z-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-indigo-200/90">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-indigo-600 dark:text-indigo-200/90">
             Career Journey
           </p>
-          <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
+          <h2 className="mt-2 text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl">
             Professional <span className="bg-linear-to-r from-indigo-200 via-cyan-200 to-fuchsia-200 bg-clip-text text-transparent">Storyline</span>
           </h2>
-          <p className="mt-2 max-w-2xl text-sm text-slate-300">
+          <p className="mt-2 max-w-2xl text-sm text-gray-600 dark:text-slate-300">
             Not just roles — a sequence of product milestones, leadership moments, and measurable engineering impact.
           </p>
         </div>
@@ -190,7 +190,7 @@ function JourneyCard({
         }`}
       >
         <div
-          className={`relative overflow-hidden rounded-3xl border border-white/10 bg-black/45 p-5 backdrop-blur-2xl transition duration-300 ${
+          className={`relative overflow-hidden rounded-3xl border border-gray-200 dark:border-white/10 bg-gray-100 dark:bg-black/45 p-5 backdrop-blur-2xl transition duration-300 ${
             isCurrent
               ? "shadow-[0_0_40px_rgba(167,139,250,0.35)]"
               : "shadow-[0_14px_40px_rgba(0,0,0,0.4)] hover:shadow-[0_0_30px_rgba(96,165,250,0.25)]"
@@ -200,28 +200,28 @@ function JourneyCard({
 
           <div className="relative z-10 flex items-start justify-between gap-4">
             <div className="flex items-start gap-3">
-              <div className="grid h-11 w-11 place-items-center rounded-full border border-white/20 bg-white/10 text-sm font-semibold text-indigo-100 shadow-[0_0_22px_rgba(129,140,248,0.32)]">
+              <div className="grid h-11 w-11 place-items-center rounded-full border border-gray-300 dark:border-white/20 bg-gray-100 dark:bg-white/10 text-sm font-semibold text-indigo-700 dark:text-indigo-200 shadow-[0_0_22px_rgba(129,140,248,0.32)]">
                 {item.logo}
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-white">{item.role}</h3>
-                <p className="text-sm text-slate-300">{item.company}</p>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{item.role}</h3>
+                <p className="text-sm text-gray-600 dark:text-slate-300">{item.company}</p>
               </div>
             </div>
 
-            <span className="inline-flex items-center rounded-full border border-indigo-300/30 bg-indigo-400/10 px-3 py-1 text-xs text-indigo-100">
+            <span className="inline-flex items-center rounded-full border border-indigo-300/30 bg-indigo-400/10 px-3 py-1 text-xs text-indigo-700 dark:text-indigo-200">
               {item.duration}
             </span>
           </div>
 
-          <p className="relative z-10 mt-3 text-sm leading-relaxed text-slate-200">{item.summary}</p>
+          <p className="relative z-10 mt-3 text-sm leading-relaxed text-gray-700 dark:text-slate-200">{item.summary}</p>
 
           <div className="relative z-10 mt-4">
-            <div className="mb-1 flex items-center justify-between text-[11px] uppercase tracking-wide text-slate-300">
+            <div className="mb-1 flex items-center justify-between text-[11px] uppercase tracking-wide text-gray-600 dark:text-slate-300">
               <span>Impact Meter</span>
               <span>{item.impactLabel}</span>
             </div>
-            <div className="h-2 overflow-hidden rounded-full bg-white/10">
+            <div className="h-2 overflow-hidden rounded-full bg-gray-100 dark:bg-white/10">
               <motion.div
                 initial={{ width: 0 }}
                 whileInView={{ width: `${item.impact}%` }}
@@ -237,7 +237,7 @@ function JourneyCard({
               <motion.span
                 key={tech}
                 whileHover={{ y: -2 }}
-                className="rounded-full border border-white/15 bg-white/8 px-2.5 py-1 text-xs text-slate-100 transition hover:border-cyan-300/50 hover:shadow-[0_0_18px_rgba(56,189,248,0.35)]"
+                className="rounded-full border border-gray-300 dark:border-white/15 bg-gray-100 dark:bg-white/8 px-2.5 py-1 text-xs text-gray-800 dark:text-slate-100 transition hover:border-cyan-300/50 hover:shadow-[0_0_18px_rgba(56,189,248,0.35)]"
               >
                 {tech}
               </motion.span>
@@ -249,7 +249,7 @@ function JourneyCard({
             animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
             className="relative z-10 overflow-hidden"
           >
-            <ul className="mt-4 space-y-2 text-sm text-slate-200">
+            <ul className="mt-4 space-y-2 text-sm text-gray-700 dark:text-slate-200">
               {item.achievements.map((point) => (
                 <li key={point} className="flex gap-2">
                   <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300" />
@@ -260,7 +260,7 @@ function JourneyCard({
 
             <a
               href={item.workUrl}
-              className="mt-4 inline-flex items-center gap-1 rounded-lg border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-medium text-slate-100 transition hover:border-indigo-300/50 hover:bg-white/14"
+              className="mt-4 inline-flex items-center gap-1 rounded-lg border border-gray-300 dark:border-white/15 bg-gray-100 dark:bg-white/10 px-3 py-1.5 text-xs font-medium text-gray-800 dark:text-gray-200 transition-colors duration-300 hover:border-indigo-300/50 hover:bg-gray-200 dark:hover:bg-white/14"
             >
               View Work <ArrowUpRight className="h-3.5 w-3.5" />
             </a>
@@ -269,7 +269,7 @@ function JourneyCard({
           <button
             type="button"
             onClick={onToggle}
-            className="relative z-10 mt-4 inline-flex items-center gap-1 rounded-full border border-white/15 bg-white/8 px-3 py-1.5 text-xs font-medium text-slate-100 transition hover:bg-white/14"
+            className="relative z-10 mt-4 inline-flex items-center gap-1 rounded-full border border-gray-300 dark:border-white/15 bg-gray-100 dark:bg-white/8 px-3 py-1.5 text-xs font-medium text-gray-800 dark:text-gray-200 transition-colors duration-300 hover:bg-gray-200 dark:hover:bg-white/14"
           >
             <BriefcaseBusiness className="h-3.5 w-3.5" />
             {isOpen ? "Hide details" : "Expand details"}

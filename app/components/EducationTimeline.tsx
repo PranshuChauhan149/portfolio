@@ -105,14 +105,14 @@ export default function EducationTimeline() {
 
       <div className="relative z-10 flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-200/80">Academic Journey</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-600 dark:text-violet-200/80">Academic Journey</p>
           <h2 className="mt-2 text-2xl font-bold tracking-tight text-transparent sm:text-3xl bg-linear-to-r from-violet-200 via-pink-200 to-cyan-200 bg-clip-text">
             Education Timeline
           </h2>
-          <p className="mt-2 text-sm text-slate-200/85">A clear snapshot of my B.Tech, Intermediate, and Matriculation journey.</p>
+          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">A clear snapshot of my B.Tech, Intermediate, and Matriculation journey.</p>
         </div>
 
-        <div className="rounded-full bg-white/8 px-4 py-1.5 text-xs font-medium text-slate-100 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12)]">
+        <div className="rounded-full bg-gray-100 dark:bg-white/8 px-4 py-1.5 text-xs font-medium text-gray-800 dark:text-slate-100 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12)]">
           Progress: <span>{progress}</span>%
         </div>
       </div>
@@ -183,8 +183,8 @@ export default function EducationTimeline() {
         className="relative z-10 mt-10"
       >
         <div className="flex items-center justify-between gap-3">
-          <h3 className="text-lg font-semibold text-white sm:text-xl">Achievements</h3>
-          <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-slate-100">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white sm:text-xl">Achievements</h3>
+          <span className="rounded-full bg-gray-100 dark:bg-white/10 px-3 py-1 text-xs font-medium text-gray-800 dark:text-slate-100">
             {achievements.length} Highlights
           </span>
         </div>
@@ -201,19 +201,19 @@ export default function EducationTimeline() {
                 viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 0.42, delay: 0.05 * index }}
                 whileHover={{ y: -3 }}
-                className="group relative overflow-hidden rounded-2xl bg-white/8 p-3 shadow-[0_10px_28px_rgba(0,0,0,0.28)] sm:p-4"
+                className="group relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-white/8 p-3 shadow-[0_10px_28px_rgba(0,0,0,0.28)] sm:p-4"
               >
                 <div className={`pointer-events-none absolute inset-y-0 left-0 w-1.5 bg-linear-to-b ${item.glow}`} />
 
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div className="flex items-start gap-3">
-                    <div className="rounded-lg bg-white/12 p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]">
-                      <Icon className="h-4 w-4 text-slate-100" />
+                    <div className="rounded-lg bg-gray-100 dark:bg-white/12 p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]">
+                      <Icon className="h-4 w-4 text-gray-800 dark:text-slate-100" />
                     </div>
-                    <p className="max-w-3xl text-sm leading-relaxed text-slate-100">{item.title}</p>
+                    <p className="max-w-3xl text-sm leading-relaxed text-gray-800 dark:text-slate-100">{item.title}</p>
                   </div>
 
-                  <span className="rounded-full bg-white/12 px-3 py-1 text-xs font-semibold text-slate-100">
+                  <span className="rounded-full bg-gray-100 dark:bg-white/12 px-3 py-1 text-xs font-semibold text-gray-800 dark:text-slate-100">
                     {item.period}
                   </span>
                 </div>
@@ -226,7 +226,7 @@ export default function EducationTimeline() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-xs font-medium text-violet-200 transition hover:text-cyan-200"
+                        className="inline-flex items-center gap-1 text-xs font-medium text-violet-600 transition-colors duration-300 hover:text-cyan-600 dark:text-violet-200 dark:hover:text-cyan-200"
                       >
                         {link.label}
                         <ExternalLink className="h-3.5 w-3.5" />
@@ -279,9 +279,9 @@ function EducationCard({
       </div>
 
       <div
-        className="relative overflow-hidden rounded-xl bg-[rgba(12,17,31,0.84)] p-5 backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]"
+        className="relative overflow-hidden rounded-xl border border-gray-200 bg-white p-5 backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] transition-colors duration-300 dark:border-white/10 dark:bg-[rgba(12,17,31,0.84)]"
         style={{
-          backgroundImage: `radial-gradient(circle at ${spot.x}% ${spot.y}%, rgba(255,255,255,0.18), rgba(255,255,255,0) 42%)`,
+          backgroundImage: `radial-gradient(circle at ${spot.x}% ${spot.y}%, rgba(99,102,241,0.12), rgba(255,255,255,0) 42%)`,
         }}
       >
         <motion.span
@@ -294,21 +294,21 @@ function EducationCard({
         />
 
         <div className="flex items-start justify-between gap-3">
-          <p className="text-xs font-semibold uppercase tracking-widest text-violet-200/85">{item.duration}</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-violet-600 dark:text-violet-200/85">{item.duration}</p>
           <motion.div
             animate={{ boxShadow: ["0 0 0px rgba(34,211,238,0.2)", "0 0 18px rgba(34,211,238,0.5)", "0 0 0px rgba(34,211,238,0.2)"] }}
             transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-            className="rounded-full bg-white/10 p-2"
+            className="rounded-full bg-gray-100 dark:bg-white/10 p-2"
           >
-            <Icon className="h-4 w-4 text-cyan-200" />
+            <Icon className="h-4 w-4 text-cyan-600 dark:text-cyan-200" />
           </motion.div>
         </div>
 
-        <h3 className="mt-3 text-lg font-bold text-white">{item.institution}</h3>
-        <p className="mt-1 text-sm font-medium text-slate-100">{item.degree}</p>
-        <p className="mt-1 text-xs text-slate-300">{item.location}</p>
+        <h3 className="mt-3 text-lg font-bold text-gray-900 dark:text-white">{item.institution}</h3>
+        <p className="mt-1 text-sm font-medium text-gray-800 dark:text-gray-200">{item.degree}</p>
+        <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">{item.location}</p>
 
-        <div className="mt-4 inline-flex rounded-full bg-emerald-500/20 px-3 py-1 text-xs font-semibold text-emerald-200 shadow-[0_0_14px_rgba(16,185,129,0.28)]">
+        <div className="mt-4 inline-flex rounded-full bg-emerald-500/20 px-3 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-200 shadow-[0_0_14px_rgba(16,185,129,0.28)]">
           {item.score}
         </div>
       </div>

@@ -124,12 +124,12 @@ export default function CertificationsSection() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="mb-10 text-center"
         >
-          <p className="inline-flex items-center gap-2 rounded-full border border-indigo-300/30 bg-indigo-500/12 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-indigo-100">
+          <p className="inline-flex items-center gap-2 rounded-full border border-indigo-300/30 bg-indigo-500/12 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-indigo-700 dark:text-indigo-200">
             <Award className="h-3.5 w-3.5" />
             Verified Credentials
           </p>
-          <h1 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Certifications</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-slate-100 sm:text-lg">
+          <h1 className="mt-5 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">Certifications</h1>
+          <p className="mx-auto mt-4 max-w-2xl text-gray-800 dark:text-slate-100 sm:text-lg">
             Professional learning milestones that validate my skills across full stack development,
             cloud, and AI.
           </p>
@@ -142,8 +142,8 @@ export default function CertificationsSection() {
                 onClick={() => setActiveFilter(filter)}
                 className={`min-h-11 rounded-full border px-4 py-1.5 text-sm font-medium transition ${
                   activeFilter === filter
-                    ? "border-indigo-300/50 bg-indigo-500/20 text-indigo-100"
-                    : "border-white/20 bg-white/8 text-slate-200 hover:border-indigo-300/35 hover:text-white"
+                    ? "border-indigo-300/50 bg-indigo-500/20 text-indigo-700 dark:text-indigo-200"
+                    : "border-gray-300 dark:border-white/20 bg-gray-100 dark:bg-white/8 text-gray-700 dark:text-gray-200 hover:border-indigo-300/35 hover:text-gray-900 dark:hover:text-white"
                 }`}
               >
                 {filter}
@@ -161,9 +161,9 @@ export default function CertificationsSection() {
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.45, delay: index * 0.08, ease: "easeOut" }}
               whileHover={{ y: -6 }}
-              className="group rounded-2xl border border-white/15 bg-white/[0.07] p-4 backdrop-blur-md transition hover:border-indigo-300/45 hover:bg-white/10 sm:p-5 lg:p-6"
+              className="group rounded-2xl border border-gray-200 dark:border-white/10 bg-white p-4 backdrop-blur-md transition-colors duration-300 hover:border-indigo-300/45 hover:bg-gray-50 dark:bg-white/5 dark:hover:bg-white/10 sm:p-5 lg:p-6"
             >
-                <div className="relative mb-4 h-40 overflow-hidden rounded-xl border border-white/15 sm:mb-5 sm:h-48">
+                <div className="relative mb-4 h-40 overflow-hidden rounded-xl border border-gray-300 dark:border-white/15 sm:mb-5 sm:h-48">
                 <Image
                   src={cert.image}
                   alt={`${cert.title} certificate preview`}
@@ -182,13 +182,13 @@ export default function CertificationsSection() {
 
               <div className="flex items-start justify-between gap-3">
                 <div>
-                  <h2 className="text-xl font-semibold text-white">{cert.title}</h2>
-                  <p className="mt-1 inline-flex items-center gap-2 text-sm text-slate-100">
+                  <h2 className="text-xl font-semibold text-gray-900 dark:text-white">{cert.title}</h2>
+                  <p className="mt-1 inline-flex items-center gap-2 text-sm text-gray-800 dark:text-slate-100">
                     <BadgeCheck className="h-4 w-4 text-emerald-400" />
                     {cert.issuer}
                   </p>
                 </div>
-                <span className="rounded-full border border-white/20 bg-white/14 px-3 py-1 text-xs text-white">
+                <span className="rounded-full border border-gray-300 dark:border-white/20 bg-gray-100 dark:bg-white/14 px-3 py-1 text-xs text-gray-900 dark:text-white">
                   {cert.date}
                 </span>
               </div>
@@ -197,7 +197,7 @@ export default function CertificationsSection() {
                 {cert.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-full border border-white/20 bg-white/14 px-2.5 py-1 text-xs text-white"
+                    className="rounded-full border border-gray-300 dark:border-white/20 bg-gray-100 dark:bg-white/14 px-2.5 py-1 text-xs text-gray-900 dark:text-white"
                   >
                     {skill}
                   </span>
@@ -208,7 +208,7 @@ export default function CertificationsSection() {
                 href={cert.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-indigo-100 transition hover:text-cyan-200"
+                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 transition-colors duration-300 hover:text-indigo-700 dark:text-indigo-300 dark:hover:text-cyan-200"
               >
                 Verify Certificate
                 <ExternalLink className="h-4 w-4" />

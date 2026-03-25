@@ -8,9 +8,13 @@ export default function BackgroundGrid() {
       aria-hidden="true"
       className="pointer-events-none fixed inset-0 -z-20 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[#070b14]" />
+      {/* Light mode background */}
+      <div className="absolute inset-0 bg-white dark:hidden" />
+      <div className="absolute inset-0 bg-linear-to-b from-gray-50 via-white to-gray-100 dark:hidden" />
 
-      <div className="absolute inset-0 bg-linear-to-b from-[#0b1020] via-[#070b14] to-[#05070f]" />
+      {/* Dark mode background */}
+      <div className="absolute inset-0 hidden dark:block bg-[#070b14]" />
+      <div className="absolute inset-0 hidden dark:block bg-linear-to-b from-[#0b1020] via-[#070b14] to-[#05070f]" />
 
       <motion.div
         animate={{ opacity: [0.42, 0.58, 0.42], scale: [1, 1.04, 1] }}

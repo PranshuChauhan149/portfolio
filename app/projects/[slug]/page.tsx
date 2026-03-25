@@ -50,13 +50,13 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         <nav aria-label="Breadcrumb" className="mb-8 text-sm">
           <ol className="flex flex-wrap items-center gap-2">
             <li>
-              <Link href="/" className="text-slate-400 transition hover:text-white">
+              <Link href="/" className="text-gray-500 dark:text-slate-400 transition hover:text-gray-900 dark:text-white">
                 Home
               </Link>
             </li>
             <li className="text-slate-600">/</li>
             <li>
-              <Link href="/projects" className="text-slate-400 transition hover:text-white">
+              <Link href="/projects" className="text-gray-500 dark:text-slate-400 transition hover:text-gray-900 dark:text-white">
                 Projects
               </Link>
             </li>
@@ -66,7 +66,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         </nav>
 
         {/* Hero Image */}
-        <div className="relative mb-10 overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur">
+        <div className="relative mb-10 overflow-hidden rounded-3xl border border-gray-200 dark:border-white/10 bg-gray-100 dark:bg-white/5 backdrop-blur">
           <div className="relative h-72 w-full sm:h-96 lg:h-125">
             <Image
               src={project.image}
@@ -95,19 +95,19 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
               <h1 className="mt-5 text-3xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
                 {project.title}
               </h1>
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:mt-6 sm:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-gray-600 dark:text-slate-300 sm:mt-6 sm:text-lg">
                 {project.longDescription}
               </p>
             </div>
 
             {/* Tech Stack */}
             <div className="mb-10">
-              <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-400">Tech Stack</h2>
+              <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-slate-400">Tech Stack</h2>
               <div className="flex flex-wrap gap-2.5">
                 {project.stack.map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-full border border-white/15 bg-white/7 px-4 py-2 text-sm font-medium text-slate-200 transition hover:bg-white/12 hover:border-indigo-400/50"
+                    className="rounded-full border border-gray-300 dark:border-white/15 bg-gray-100 dark:bg-white/7 px-4 py-2 text-sm font-medium text-gray-700 dark:text-slate-200 transition hover:bg-gray-100 dark:bg-white/12 hover:border-indigo-400/50"
                   >
                     {tech}
                   </span>
@@ -116,7 +116,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
             </div>
 
             {/* Highlights */}
-            <div className="mb-10 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur sm:p-8">
+            <div className="mb-10 rounded-2xl border border-gray-200 dark:border-white/10 bg-gray-100 dark:bg-white/5 p-5 backdrop-blur sm:p-8">
               <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
                 <span className="h-1 w-1 rounded-full bg-indigo-400" />
                 Project Highlights
@@ -127,7 +127,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                     <span className="mt-1.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indigo-500/20 text-xs font-bold text-indigo-300">
                       {index + 1}
                     </span>
-                    <span className="text-slate-300 leading-relaxed">{point}</span>
+                    <span className="text-gray-600 dark:text-slate-300 leading-relaxed">{point}</span>
                   </li>
                 ))}
               </ul>
@@ -144,7 +144,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                   {project.gallery.map((image, index) => (
                     <div
                       key={`${project.slug}-${index}`}
-                      className="group relative h-64 overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur"
+                      className="group relative h-64 overflow-hidden rounded-2xl border border-gray-200 dark:border-white/10 bg-gray-100 dark:bg-white/5 backdrop-blur"
                     >
                       <Image
                         src={image}
@@ -164,8 +164,8 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
           {/* Sidebar */}
           <aside className="h-fit">
             {/* Quick Links Card */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur sm:p-6 lg:sticky lg:top-32">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-6">Quick Links</h3>
+            <div className="rounded-2xl border border-gray-200 dark:border-white/10 bg-gray-100 dark:bg-white/5 p-5 backdrop-blur sm:p-6 lg:sticky lg:top-32">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 dark:text-slate-400 mb-6">Quick Links</h3>
               <div className="space-y-3">
                 <a
                   href={project.demoUrl}
@@ -180,14 +180,14 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex min-h-11 w-full items-center justify-between rounded-xl border border-white/15 bg-white/7 px-4 py-3 text-sm font-semibold text-slate-200 transition hover:border-white/25 hover:bg-white/12"
+                  className="group flex min-h-11 w-full items-center justify-between rounded-xl border border-gray-300 dark:border-white/15 bg-gray-100 dark:bg-white/7 px-4 py-3 text-sm font-semibold text-gray-700 dark:text-slate-200 transition hover:border-white/25 hover:bg-gray-100 dark:bg-white/12"
                 >
                   <span>Source Code</span>
                   <Github className="h-4 w-4 transition group-hover:translate-x-0.5" />
                 </a>
                 <Link
                   href="/projects"
-                  className="group flex min-h-11 w-full items-center justify-between rounded-xl border border-white/15 bg-white/7 px-4 py-3 text-sm font-semibold text-slate-200 transition hover:bg-white/12"
+                  className="group flex min-h-11 w-full items-center justify-between rounded-xl border border-gray-300 dark:border-white/15 bg-gray-100 dark:bg-white/7 px-4 py-3 text-sm font-semibold text-gray-700 dark:text-slate-200 transition hover:bg-gray-100 dark:bg-white/12"
                 >
                   <span>All Projects</span>
                   <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
@@ -209,7 +209,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                 <Link
                   key={item.slug}
                   href={`/projects/${item.slug}`}
-                  className="group rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6 transition hover:border-indigo-400/30 hover:bg-white/8"
+                  className="group rounded-2xl border border-gray-200 dark:border-white/10 bg-gray-100 dark:bg-white/5 backdrop-blur p-6 transition hover:border-indigo-400/30 hover:bg-gray-100 dark:bg-white/8"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex-1">
@@ -217,9 +217,9 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                       <h3 className="mt-2 text-xl font-bold text-foreground group-hover:text-indigo-300 transition">
                         {item.title}
                       </h3>
-                      <p className="mt-3 text-sm text-slate-400 leading-relaxed">{item.description}</p>
+                      <p className="mt-3 text-sm text-gray-500 dark:text-slate-400 leading-relaxed">{item.description}</p>
                     </div>
-                    <ArrowRight className="h-5 w-5 text-slate-400 transition group-hover:translate-x-1 group-hover:text-indigo-300 shrink-0 mt-1" />
+                    <ArrowRight className="h-5 w-5 text-gray-500 dark:text-slate-400 transition group-hover:translate-x-1 group-hover:text-indigo-300 shrink-0 mt-1" />
                   </div>
                 </Link>
               ))}

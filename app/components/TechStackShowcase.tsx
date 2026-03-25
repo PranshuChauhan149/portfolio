@@ -64,16 +64,16 @@ type SkillNode = {
 
 const skillIcons: Record<string, { icon: IconType; iconColor: string }> = {
   React: { icon: SiReact, iconColor: "text-cyan-300" },
-  "Next.js": { icon: SiNextdotjs, iconColor: "text-slate-100" },
+  "Next.js": { icon: SiNextdotjs, iconColor: "text-gray-800 dark:text-slate-100" },
   TypeScript: { icon: SiTypescript, iconColor: "text-blue-300" },
   "Tailwind CSS": { icon: SiTailwindcss, iconColor: "text-sky-300" },
   "Node.js": { icon: SiNodedotjs, iconColor: "text-emerald-300" },
-  Express: { icon: SiExpress, iconColor: "text-slate-200" },
+  Express: { icon: SiExpress, iconColor: "text-gray-700 dark:text-slate-200" },
   MongoDB: { icon: SiMongodb, iconColor: "text-emerald-300" },
   PostgreSQL: { icon: SiPostgresql, iconColor: "text-indigo-300" },
   "React Native": { icon: SiReact, iconColor: "text-cyan-300" },
   Flutter: { icon: SiFlutter, iconColor: "text-sky-300" },
-  Expo: { icon: SiExpo, iconColor: "text-slate-100" },
+  Expo: { icon: SiExpo, iconColor: "text-gray-800 dark:text-slate-100" },
   "Native APIs": { icon: TbPlugConnected, iconColor: "text-violet-300" },
   Python: { icon: SiPython, iconColor: "text-yellow-300" },
   TensorFlow: { icon: SiTensorflow, iconColor: "text-orange-300" },
@@ -81,15 +81,15 @@ const skillIcons: Record<string, { icon: IconType; iconColor: string }> = {
   "OpenAI APIs": { icon: SiOpenai, iconColor: "text-emerald-200" },
   JavaScript: { icon: SiJavascript, iconColor: "text-yellow-300" },
   Figma: { icon: SiFigma, iconColor: "text-pink-300" },
-  Notion: { icon: SiNotion, iconColor: "text-slate-100" },
-  Markdown: { icon: SiMarkdown, iconColor: "text-slate-200" },
+  Notion: { icon: SiNotion, iconColor: "text-gray-800 dark:text-slate-100" },
+  Markdown: { icon: SiMarkdown, iconColor: "text-gray-700 dark:text-slate-200" },
   GraphQL: { icon: SiGraphql, iconColor: "text-fuchsia-300" },
   Redux: { icon: SiRedux, iconColor: "text-violet-300" },
   Docker: { icon: SiDocker, iconColor: "text-sky-300" },
   Git: { icon: SiGit, iconColor: "text-orange-300" },
-  GitHub: { icon: SiGithub, iconColor: "text-slate-100" },
+  GitHub: { icon: SiGithub, iconColor: "text-gray-800 dark:text-slate-100" },
   Azure: { icon: FaMicrosoft, iconColor: "text-blue-300" },
-  Vercel: { icon: SiVercel, iconColor: "text-slate-100" },
+  Vercel: { icon: SiVercel, iconColor: "text-gray-800 dark:text-slate-100" },
   Svelte: { icon: SiSvelte, iconColor: "text-orange-300" },
   Supabase: { icon: SiSupabase, iconColor: "text-emerald-300" },
   Prisma: { icon: SiPrisma, iconColor: "text-cyan-200" },
@@ -99,10 +99,10 @@ const skillIcons: Record<string, { icon: IconType; iconColor: string }> = {
   Java: { icon: FaJava, iconColor: "text-amber-200" },
   Vue: { icon: SiVuedotjs, iconColor: "text-emerald-300" },
   MySQL: { icon: SiMysql, iconColor: "text-blue-300" },
-  Remix: { icon: SiRemix, iconColor: "text-slate-100" },
+  Remix: { icon: SiRemix, iconColor: "text-gray-800 dark:text-slate-100" },
   Angular: { icon: SiAngular, iconColor: "text-red-300" },
   "C++": { icon: SiCplusplus, iconColor: "text-blue-300" },
-  C: { icon: SiC, iconColor: "text-slate-200" },
+  C: { icon: SiC, iconColor: "text-gray-700 dark:text-slate-200" },
   Spring: { icon: SiSpring, iconColor: "text-emerald-300" },
   Kubernetes: { icon: SiKubernetes, iconColor: "text-blue-300" },
   Jenkins: { icon: SiJenkins, iconColor: "text-red-200" },
@@ -207,7 +207,7 @@ export default function TechStackShowcase() {
     const base = skills.flatMap((group) =>
       (group.title === "Mobile" || group.title === "AI / ML" ? [] :
       group.items.map((item) => {
-        const iconMeta = skillIcons[item.name] ?? { icon: SiReactquery, iconColor: "text-slate-200" };
+        const iconMeta = skillIcons[item.name] ?? { icon: SiReactquery, iconColor: "text-gray-700 dark:text-slate-200" };
 
         return {
           name: item.name,
@@ -227,7 +227,7 @@ export default function TechStackShowcase() {
         .map((item) => ({
         ...item,
         icon: skillIcons[item.name]?.icon ?? SiReactquery,
-        iconColor: skillIcons[item.name]?.iconColor ?? "text-slate-200",
+        iconColor: skillIcons[item.name]?.iconColor ?? "text-gray-700 dark:text-slate-200",
       })),
     ];
 
@@ -259,16 +259,16 @@ export default function TechStackShowcase() {
 
   return (
     <section className="section mt-14 sm:mt-16">
-      <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-[#0b1022]/88 via-[#0f172d]/84 to-[#101b34]/88 p-6 shadow-[0_25px_90px_rgba(0,0,0,0.45)] sm:p-8">
+      <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white p-6 shadow-[0_25px_90px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/10 dark:bg-linear-to-br dark:from-[#0b1022]/88 dark:via-[#0f172d]/84 dark:to-[#101b34]/88 dark:shadow-[0_25px_90px_rgba(0,0,0,0.45)] sm:p-8">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(99,102,241,0.18),transparent_45%),radial-gradient(circle_at_80%_80%,rgba(56,189,248,0.15),transparent_45%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size-[38px_38px]" />
 
         <div className="relative z-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-200/80">Skill Universe</p>
-          <h2 className="mt-2 text-2xl font-bold text-transparent sm:text-3xl bg-linear-to-r from-indigo-200 via-fuchsia-200 to-cyan-200 bg-clip-text">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-200/80">Skill Universe</p>
+          <h2 className="mt-2 text-2xl font-bold text-transparent sm:text-3xl bg-linear-to-r from-indigo-600 via-fuchsia-600 to-cyan-600 bg-clip-text dark:from-indigo-200 dark:via-fuchsia-200 dark:to-cyan-200">
             Tech Stack Showcase
           </h2>
-          <p className="mt-2 text-sm text-slate-200/90">Interactive digital playground of tools I build with.</p>
+          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">Interactive digital playground of tools I build with.</p>
 
           <div className="mt-5 flex flex-wrap gap-2">
             {catOrder.map((tab) => (
@@ -278,8 +278,8 @@ export default function TechStackShowcase() {
                 onClick={() => setFilter(tab)}
                 className={`min-h-11 rounded-full px-4 py-1.5 text-sm font-medium transition ${
                   filter === tab
-                    ? "bg-indigo-500/25 text-indigo-100 shadow-[0_0_18px_rgba(99,102,241,0.35)]"
-                    : "bg-white/8 text-slate-200 hover:bg-white/12"
+                    ? "bg-indigo-500/25 text-indigo-700 dark:text-indigo-200 shadow-[0_0_18px_rgba(99,102,241,0.35)]"
+                    : "bg-gray-100 dark:bg-white/8 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-white/12"
                 }`}
               >
                 {tab}
@@ -290,7 +290,7 @@ export default function TechStackShowcase() {
 
         <div className="relative z-10 mt-7 grid gap-6 xl:grid-cols-[1.3fr_0.7fr]">
           <div
-            className="relative hidden h-170 overflow-hidden rounded-2xl bg-white/4 xl:block"
+            className="relative hidden h-170 overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 dark:border-white/10 dark:bg-white/4 xl:block"
             onMouseMove={(e) => {
               const b = e.currentTarget.getBoundingClientRect();
               setSpot({ x: ((e.clientX - b.left) / b.width) * 100, y: ((e.clientY - b.top) / b.height) * 100 });
@@ -341,7 +341,7 @@ export default function TechStackShowcase() {
                 className="group absolute -translate-x-1/2 -translate-y-1/2"
                 style={{ left: `${skill.x}%`, top: `${skill.y}%` }}
               >
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2.5 text-sm font-semibold text-slate-100 shadow-[0_0_0_1px_rgba(255,255,255,0.15)] transition group-hover:scale-110 group-hover:bg-white/18 group-hover:shadow-[0_0_24px_rgba(99,102,241,0.55)]">
+                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 dark:bg-white/10 px-4 py-2.5 text-sm font-semibold text-gray-800 dark:text-gray-200 shadow-[0_0_0_1px_rgba(255,255,255,0.15)] transition group-hover:scale-110 group-hover:bg-gray-200 dark:group-hover:bg-white/18 group-hover:shadow-[0_0_24px_rgba(99,102,241,0.55)]">
                   <skill.icon className={`h-4 w-4 ${skill.iconColor}`} />
                   {skill.name}
                 </div>
@@ -352,14 +352,14 @@ export default function TechStackShowcase() {
                     {skill.name}
                   </p>
                   <p className="mt-1 text-xs text-indigo-200">{skill.level >= 85 ? "Advanced" : skill.level >= 70 ? "Intermediate" : "Beginner"}</p>
-                  <p className="mt-2 text-xs text-slate-300">{skill.description}</p>
+                  <p className="mt-2 text-xs text-gray-300">{skill.description}</p>
                 </div>
               </motion.button>
             ))}
           </div>
 
-          <div className="rounded-2xl bg-white/5 p-5 backdrop-blur-md">
-            <p className="text-xs uppercase tracking-[0.18em] text-slate-300">Skill Power Level</p>
+          <div className="rounded-2xl border border-gray-200 bg-white p-5 backdrop-blur-md transition-colors duration-300 dark:border-white/10 dark:bg-white/5">
+            <p className="text-xs uppercase tracking-[0.18em] text-gray-600 dark:text-gray-400">Skill Power Level</p>
             <div className="mt-3 flex items-center gap-4">
               <svg width="110" height="110" viewBox="0 0 110 110" className="shrink-0">
                 <circle cx="55" cy="55" r={p.r} fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="9" />
@@ -383,18 +383,18 @@ export default function TechStackShowcase() {
                     <stop offset="100%" stopColor="#22d3ee" />
                   </linearGradient>
                 </defs>
-                <text x="55" y="60" textAnchor="middle" className="fill-white text-lg font-bold">
+                <text x="55" y="60" textAnchor="middle" className="fill-gray-900 dark:fill-white text-lg font-bold">
                   {active?.level ?? 0}%
                 </text>
               </svg>
 
               <div>
-                <p className="inline-flex items-center gap-2 text-lg font-semibold text-white">
+                <p className="inline-flex items-center gap-2 text-lg font-semibold text-gray-900 dark:text-white">
                   {active?.icon ? <active.icon className={`h-5 w-5 ${active.iconColor}`} /> : null}
                   {active?.name ?? "Select a skill"}
                 </p>
-                <p className="mt-1 text-sm text-slate-300">{active?.description ?? "Click any skill node to inspect details."}</p>
-                <p className="mt-2 text-xs text-indigo-200">Cluster: {active?.category ?? "--"}</p>
+                <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">{active?.description ?? "Click any skill node to inspect details."}</p>
+                <p className="mt-2 text-xs text-indigo-600 dark:text-indigo-200">Cluster: {active?.category ?? "--"}</p>
               </div>
             </div>
 
@@ -405,7 +405,7 @@ export default function TechStackShowcase() {
                     type="button"
                     key={s.name}
                     onClick={() => setActive(s)}
-                    className="min-h-11 rounded-lg bg-white/10 px-3 py-2 text-xs font-medium text-slate-100"
+                    className="min-h-11 rounded-lg bg-gray-100 dark:bg-white/10 px-3 py-2 text-xs font-medium text-gray-800 dark:text-gray-200 transition-colors duration-300 hover:bg-gray-200 dark:hover:bg-white/20"
                   >
                     <s.icon className={`mr-1 inline h-3.5 w-3.5 ${s.iconColor}`} />
                     {s.name}

@@ -90,7 +90,7 @@ export default function ContactSection() {
 
   return (
     <AnimatedSection id="contact" className="section mt-24 scroll-mt-24 pb-16">
-      <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-[#0a0f1f]/92 via-[#111028]/88 to-[#0c1326]/92 p-7 shadow-[0_24px_80px_rgba(0,0,0,0.48)] sm:p-10">
+      <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white p-7 shadow-[0_24px_80px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/10 dark:bg-linear-to-br dark:from-[#0a0f1f]/92 dark:via-[#111028]/88 dark:to-[#0c1326]/92 dark:shadow-[0_24px_80px_rgba(0,0,0,0.48)] sm:p-10">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(99,102,241,0.24),transparent_45%),radial-gradient(circle_at_85%_80%,rgba(236,72,153,0.22),transparent_45%)]" />
         <motion.div
           aria-hidden="true"
@@ -111,7 +111,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.45 }}
-            className="text-2xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
+            className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl"
           >
             Let&apos;s Build Something <span className="gradient-text drop-shadow-[0_0_18px_rgba(167,139,250,0.45)]">Amazing</span> Together 🚀
           </motion.h2>
@@ -120,13 +120,13 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.45, delay: 0.05 }}
-            className="mt-3 max-w-2xl text-slate-200"
+            className="mt-3 max-w-2xl text-gray-600 dark:text-gray-400"
           >
             Have an idea, project, or opportunity? I&apos;m just one message away.
           </motion.p>
 
           <div className="mt-5 flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center gap-2 rounded-full bg-emerald-500/18 px-3 py-1 text-sm text-emerald-200 shadow-[0_0_18px_rgba(16,185,129,0.24)]">
+            <span className="inline-flex items-center gap-2 rounded-full bg-emerald-500/18 px-3 py-1 text-sm text-emerald-700 dark:text-emerald-200 shadow-[0_0_18px_rgba(16,185,129,0.24)]">
               Open to opportunities 🟢
             </span>
             <LinkButton href={socialLinks.email} icon={<BriefcaseBusiness className="h-4 w-4" />} text="Hire Me" />
@@ -137,23 +137,23 @@ export default function ContactSection() {
         <div className="relative z-10 mt-8 grid gap-7 lg:grid-cols-[1fr_1.15fr]">
         <div>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
-            <InfoCard icon={<Mail className="h-5 w-5 text-indigo-200" />} title="Email" value={socialLinks.email.replace("mailto:", "")} href={socialLinks.email} action={
+            <InfoCard icon={<Mail className="h-5 w-5 text-indigo-600 dark:text-indigo-200" />} title="Email" value={socialLinks.email.replace("mailto:", "")} href={socialLinks.email} action={
               <button
                 type="button"
                 onClick={copyEmail}
-                className="ml-auto rounded-md bg-white/10 p-1.5 text-slate-200 transition hover:bg-white/20"
+                className="ml-auto rounded-md bg-gray-100 dark:bg-white/10 p-1.5 text-gray-700 dark:text-gray-200 transition-colors duration-300 hover:bg-gray-200 dark:hover:bg-white/20"
                 aria-label="Copy email"
               >
                 {copiedEmail ? <CheckCircle2 className="h-4 w-4 text-emerald-300" /> : <Copy className="h-4 w-4" />}
               </button>
             } />
 
-            <InfoCard icon={<Phone className="h-5 w-5 text-cyan-200" />} title="Phone" value="+91 6388655896" href="tel:+916388655896" />
+            <InfoCard icon={<Phone className="h-5 w-5 text-cyan-600 dark:text-cyan-200" />} title="Phone" value="+91 6388655896" href="tel:+916388655896" />
 
-            <InfoCard icon={<MapPin className="h-5 w-5 text-fuchsia-200" />} title="Location" value="Phagwara, Punjab, India" />
+            <InfoCard icon={<MapPin className="h-5 w-5 text-fuchsia-600 dark:text-fuchsia-200" />} title="Location" value="Phagwara, Punjab, India" />
           </div>
 
-          <div className="mt-6 text-sm text-slate-200">
+          <div className="mt-6 text-sm text-gray-700 dark:text-gray-200">
             <p className="mb-3 font-medium">Social Links</p>
             <div className="flex flex-wrap gap-3">
               <SocialButton href={socialLinks.github} label="GitHub" icon={<Github className="h-4 w-4" />} />
@@ -166,7 +166,7 @@ export default function ContactSection() {
             <motion.div
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-slate-100"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-gray-100 dark:bg-white/10 px-4 py-2 text-sm text-gray-800 dark:text-gray-200"
             >
               {reaction}
             </motion.div>
@@ -179,7 +179,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.45 }}
-          className="rounded-2xl bg-white/8 p-5 backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.16)]"
+          className="rounded-2xl border border-gray-200 bg-white p-5 backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] transition-colors duration-300 dark:border-white/10 dark:bg-white/8"
         >
           <div className="grid gap-4 sm:grid-cols-2">
             <Field
@@ -216,13 +216,13 @@ export default function ContactSection() {
                 value={form.message}
                 onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
                 placeholder=" "
-                className="peer w-full resize-none rounded-xl border border-white/15 bg-black/25 px-4 pb-3 pt-6 text-slate-100 outline-none transition focus:border-fuchsia-300/60 focus:shadow-[0_0_0_3px_rgba(217,70,239,0.2)]"
+                className="peer w-full resize-none rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-black/25 px-4 pb-3 pt-6 text-gray-900 dark:text-white outline-none transition-colors duration-300 focus:border-fuchsia-300/60 focus:shadow-[0_0_0_3px_rgba(217,70,239,0.2)]"
               />
-              <span className="pointer-events-none absolute left-4 top-4 origin-left text-sm text-slate-300 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:scale-90 peer-focus:text-indigo-200">
+              <span className="pointer-events-none absolute left-4 top-4 origin-left text-sm text-gray-600 dark:text-gray-400 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:scale-90 peer-focus:text-indigo-500 dark:peer-focus:text-indigo-200">
                 Message
               </span>
             </label>
-            <div className="mt-2 flex items-center justify-between text-xs text-slate-300">
+            <div className="mt-2 flex items-center justify-between text-xs text-gray-600 dark:text-gray-400">
               <span>Tell me about your project goals.</span>
               <span>{form.message.length}/{MAX_MESSAGE}</span>
             </div>
@@ -288,9 +288,9 @@ function Field({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder=" "
-        className="peer w-full rounded-xl border border-white/15 bg-black/25 px-4 pb-3 pt-6 text-slate-100 outline-none transition focus:border-indigo-300/60 focus:shadow-[0_0_0_3px_rgba(99,102,241,0.2)]"
+        className="peer w-full rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-black/25 px-4 pb-3 pt-6 text-gray-900 dark:text-white outline-none transition-colors duration-300 focus:border-indigo-300/60 focus:shadow-[0_0_0_3px_rgba(99,102,241,0.2)]"
       />
-      <span className="pointer-events-none absolute left-4 top-4 origin-left text-sm text-slate-300 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:scale-90 peer-focus:text-indigo-200">
+      <span className="pointer-events-none absolute left-4 top-4 origin-left text-sm text-gray-600 dark:text-gray-400 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:scale-90 peer-focus:text-indigo-500 dark:peer-focus:text-indigo-200">
         {label}
       </span>
     </label>
@@ -312,7 +312,7 @@ function LinkButton({
     return (
       <a
         href={href}
-        className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-sm text-slate-100 transition hover:bg-white/16"
+        className="inline-flex items-center gap-2 rounded-full bg-gray-100 dark:bg-white/10 px-3 py-1.5 text-sm text-gray-800 dark:text-gray-200 transition-colors duration-300 hover:bg-gray-200 dark:hover:bg-white/16"
       >
         {icon}
         {text}
@@ -323,7 +323,7 @@ function LinkButton({
   return (
     <a
       href={href}
-      className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-sm text-slate-100 transition hover:bg-white/16"
+      className="inline-flex items-center gap-2 rounded-full bg-gray-100 dark:bg-white/10 px-3 py-1.5 text-sm text-gray-800 dark:text-gray-200 transition-colors duration-300 hover:bg-gray-200 dark:hover:bg-white/16"
     >
       {icon}
       {text}
@@ -347,12 +347,12 @@ function InfoCard({
   const content = (
     <motion.div
       whileHover={{ y: -4 }}
-      className="group flex items-center gap-3 rounded-xl bg-white/8 p-3 text-sm text-slate-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.15)] transition hover:shadow-[0_0_26px_rgba(99,102,241,0.28)]"
+      className="group flex items-center gap-3 rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/8 p-3 text-sm text-gray-800 dark:text-gray-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.15)] transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-white/10 hover:shadow-[0_0_26px_rgba(99,102,241,0.28)]"
     >
-      <div className="rounded-lg bg-white/12 p-2">{icon}</div>
+      <div className="rounded-lg bg-gray-100 dark:bg-white/12 p-2">{icon}</div>
       <div className="min-w-0">
-        <p className="text-xs text-slate-300">{title}</p>
-        <p className="truncate font-medium text-white">{value}</p>
+        <p className="text-xs text-gray-600 dark:text-gray-400">{title}</p>
+        <p className="truncate font-medium text-gray-900 dark:text-white">{value}</p>
       </div>
       {action}
     </motion.div>
@@ -374,7 +374,7 @@ function SocialButton({ href, icon, label }: { href: string; icon: React.ReactNo
       target="_blank"
       rel="noopener noreferrer"
       whileHover={{ rotate: -6, y: -3 }}
-      className="group relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-slate-100 shadow-[0_0_0_1px_rgba(255,255,255,0.12)] transition hover:shadow-[0_0_24px_rgba(99,102,241,0.45)]"
+      className="group relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 dark:border-white/10 bg-white dark:bg-white/10 text-gray-800 dark:text-gray-200 shadow-[0_0_0_1px_rgba(255,255,255,0.12)] transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-white/20 hover:shadow-[0_0_24px_rgba(99,102,241,0.45)]"
       aria-label={label}
     >
       {icon}

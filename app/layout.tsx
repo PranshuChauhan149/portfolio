@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Inter, Poppins, Geist } from "next/font/google";
 import BackgroundGrid from "@/app/components/BackgroundGrid";
 import Footer from "@/app/components/Footer";
+import MouseGlow from "@/app/components/MouseGlow";
 import Navbar from "@/app/components/Navbar";
 import RouteEffects from "@/app/components/RouteEffects";
+import ThemeProvider from "@/app/components/ThemeProvider";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -36,12 +38,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn("font-sans", geist.variable)}>
-      <body className={`${inter.variable} ${poppins.variable} antialiased`}>
-        <BackgroundGrid />
-        <RouteEffects />
-        <Navbar />
-        <main className="relative z-10 overflow-x-clip pb-10 pt-24 sm:pt-26 lg:pt-28">{children}</main>
-        <Footer />
+      <body className={`${inter.variable} ${poppins.variable} antialiased bg-background-light dark:bg-background-dark text-textPrimary-light dark:text-textPrimary-dark transition-colors duration-300`}>
+        <ThemeProvider>
+          <MouseGlow />
+          <BackgroundGrid />
+          <RouteEffects />
+          <Navbar />
+          <main className="relative z-10 overflow-x-clip pb-10 pt-24 sm:pt-26 lg:pt-28">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
